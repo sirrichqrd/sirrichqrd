@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SIR.RICHQRD - Empowering Minds, Enriching Body, Elevating Lives">
+    <meta name="keywords" content="martial arts, wellness, yoga, tai chi, meditation, retreats, workshops, seminars, self-defense, fitness, consulting, creative writing">
+    <meta name="author" content="SIR.RICHQRD">
+    <title>SIR.RICHQRD - Empowering Minds, Enriching Body, Elevating Lives</title>
+    
+    <!-- Bootstrap 5 CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-100: #FFEBEE;
+            --primary-200: #FFCDD2;
+            --primary-300: #EF9A9A;
+            --primary-400: #E57373;
+            --primary-500: #EF5350;
+            --primary-600: #E53935;
+            --primary-700: #D32F2F;
+            --primary-800: #C62828;
+            --primary-900: #B71C1C;
+            
+            --neutral-50: #FAFAFA;
+            --neutral-100: #F5F5F5;
+            --neutral-200: #E5E5E5;
+            --neutral-300: #D4D4D4;
+            --neutral-400: #A3A3A3;
+            --neutral-500: #737373;
+            --neutral-600: #525252;
+            --neutral-700: #404040;
+            --neutral-800: #262626;
+            --neutral-900: #171717;
+            
+            --accent-orange: #FF5722;
+            --accent-amber: #FFA000;
+            --accent-deep-red: #8B0000;
+            --accent-maroon: #800000;
+            
+            --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <div class="navbar-brand fw-bold profile-section">
+                <a href="#home" class="logo">
+                    <img src="images/rau LOGO alternative w.png" alt="ITAS Logo"  >
+                     
+                </a>
+            </div>
+            
+            <ul class="nav-menu navbar-nav ms-auto align-items-center">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#featured" class="nav-link">Featured</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (initially hidden) -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-menu">
+            <li class="mobile-nav-item">
+                <a href="#home" class="mobile-nav-link">Home</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#services" class="mobile-nav-link">Services</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#featured" class="mobile-nav-link">Featured</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#about" class="mobile-nav-link">About</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Booking Modal Popover (WhatsApp + Email) -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="booking-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Book This Service</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-service-name" id="modalServiceName">Service Name</h4>
+                <div class="modal-service-price" id="modalServicePrice">₦0,000</div>
+                <div class="modal-message" id="modalMessage">
+                    Choose your preferred booking method below.
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn-cancel">Cancel</button>
+                <div class="booking-buttons">
+                    <a href="#" id="whatsappLink" class="modal-btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="#" id="emailLink" class="modal-btn-email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-sparkles"></i>
+                Transforming Lives Through Movement
+            </div>
+            
+            <h1 class="font-display">Empowering Minds,<br>Enriching Body,<br>Elevating Lives</h1>
+            
+            <p class="hero-subtitle">
+                Hi! There I'm RICHQRD take a journey with me.
+            </p>
+            
+            <div class="hero-cta">
+                <a href="#services" class="btn-primary">
+                    Explore Services
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#about" class="btn-secondary">
+                    <i class="fas fa-play"></i>
+                    Learn More
+                </a>
+            </div>
+            
+            <div class="hero-visual">
+                <!-- <img src="images/taichi-fan-snake-through-the-grass.JPG" class="hero-image w-100 carousel-img" alt="Martial Arts"> -->
+                
+                <div class="floating-card floating-card-1">
+                    <h4>Adaptive</h4>
+                    <p>Transformed through our programs</p>
+                </div>
+                
+                <div class="floating-card floating-card-2">
+                    <h4>Expert Training</h4>
+                    <p>Personalized coaching for fitness</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <div class="section-badge">
+                <i class="fas fa-star"></i>
+                Services
+            </div>
+        
+            <p class="section-description">
+                Each session is carefully crafted to meet your individual needs and goals. 
+                All sessions are 1 hour long unless specified otherwise.
+            </p>
+        </div>
+        
+        <div class="services-container">
+            <div class="btn-group services-tabs d-flex justify-content-evenly">
+                <button class="button tab-button active" data-tab="martial-arts">
+                    <i class="fas fa-yin-yang tab-icon"></i>
+                    Martial Arts
+                </button>
+                <button class="button tab-button" data-tab="wellness">
+                    <i class="fas fa-leaf tab-icon"></i>
+                    Wellness
+                </button>
+                <button class="button tab-button" data-tab="specialized">
+                    <i class="fas fa-mountain tab-icon"></i>
+                    Specialized
+                </button>
+                <button class="button tab-button" data-tab="bundles">
+                    <i class="fas fa-layer-group tab-icon"></i>
+                    Bundles
+                </button>
+                <button class="button tab-button" data-tab="packages">
+                    <i class="fas fa-gift tab-icon"></i>
+                    Packages
+                </button>
+            </div>
+            
+            <div class="services-content">
+                <!-- Martial Arts Tab -->
+                <div class="tab-content active" id="martial-arts">
+                    <div class="services-grid">
+                        <div class="service-item" data-service="Karate - Youth/Teens" data-price="₦10,000" data-message="Hi! I'd like to book Karate for Youth/Teens at ₦10,000. Please provide more details about availability and scheduling.">
+                            <div class="service-header">
+                                <h3 class="service-name">Karate - Youth/Teens</h3>
+                                <span class="service-price">₦10,000</span>
+                            </div>
+                            <p class="service-description">Traditional karate techniques designed for young practitioners, building discipline, confidence, and physical fitness.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> 1 hour</span>
+                                <span class="service-duration"><i class="fas fa-calendar"></i> Single sessions</span>
+                                <span class="service-type"><i class="fas fa-users"></i> Individual/Group</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Karate - Adults" data-price="₦15,000" data-message="Hi! I'd like to book Karate for Adults at ₦15,000. Please provide more details about availability and scheduling.">
+                            <div class="service-header">
+                                <h3 class="service-name">Karate - Adults</h3>
+                                <span class="service-price">₦15,000</span>
+                            </div>
+                            <p class="service-description">Advanced karate training for adults focusing on technique refinement, self-defense, and physical conditioning.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> 1 hour</span>
+                                <span class="service-type"><i class="fas fa-user"></i> Individual</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Cross-Training" data-price="₦20,000" data-message="Hi! I'd like to book Cross-Training at ₦20,000. Please provide more details about availability and scheduling.">
+                            <div class="service-header">
+                                <h3 class="service-name">Cross-Training</h3>
+                                <span class="service-price">₦20,000</span>
+                            </div>
+                            <p class="service-description">Modern cross-training methods combining karate with fitness techniques for comprehensive physical development.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> 1 hour</span>
+                                <span class="service-type"><i class="fas fa-dumbbell"></i> Intensive</span>
+                            </div>
+                        </div>
+                        <!---
+                        <div class="service-item" data-service="Self-Defense Workshops" data-price="From ₦100,000" data-message="Hi! I'd like to book a Self-Defense Workshop starting from ₦100,000. Please provide more details about group size and availability.">
+                            <div class="service-header">
+                                <h3 class="service-name">Self-Defense Workshops</h3>
+                                <span class="service-price">From ₦100,000</span>
+                            </div>
+                            <p class="service-description">Intensive group workshops covering practical self-defense techniques and situational awareness for personal safety.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> 2-4 hours</span>
+                                <span class="service-type"><i class="fas fa-users"></i> Group Workshop</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Seminars/Masterclasses" data-price="From ₦200,000" data-message="Hi! I'd like to book a Seminar/Masterclass starting from ₦200,000. Please provide more details about topics and availability.">
+                            <div class="service-header">
+                                <h3 class="service-name">Seminars/Masterclasses</h3>
+                                <span class="service-price">From ₦200,000</span>
+                            </div>
+                            <p class="service-description">Expert-level seminars covering advanced martial arts philosophy, techniques, and mental training approaches.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> Half/Full Day</span>
+                                <span class="service-type"><i class="fas fa-graduation-cap"></i> Educational</span>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- Wellness Tab -->
+                <div class="tab-content" id="wellness">
+                    <div class="services-grid">
+                        <div class="service-item" data-service="Yoga - Private Session" data-price="₦15,000" data-message="Hi! I'd like to book a Private Yoga Session at ₦15,000. Please provide more details about availability and scheduling.">
+                            <div class="service-header">
+                                <h3 class="service-name">Yoga - Session</h3>
+                                <span class="service-price">₦15,000</span>
+                            </div>
+                            <p class="service-description">Personalized yoga practice adapted to your individual needs, focusing on flexibility, strength, and mindfulness.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> 1 hour</span>
+                                <span class="service-type"><i class="fas fa-user"></i> Private</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Yoga - Group Session" data-price="₦9,500/person" data-message="Hi! I'd like to book a Group Yoga Session at ₦9,500 per person (5-10 people). Please provide more details about group requirements.">
+                            <div class="service-header">
+                                <h3 class="service-name">Yoga - Group Session</h3>
+                                <span class="service-price">₦9,500/person</span>
+                            </div>
+                            <p class="service-description">Group yoga sessions for 5-10 people, creating a supportive community environment for shared wellness journey.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> 1 hour</span>
+                                <span class="service-type"><i class="fas fa-users"></i> 5-10 people</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Meditation & Mindfulness - Private" data-price="₦12,000" data-message="Hi! I'd like to book a Private Meditation & Mindfulness Session at ₦12,000. Please provide more details about techniques and scheduling.">
+                            <div class="service-header">
+                                <h3 class="service-name">Meditation & Mindfulness - Private</h3>
+                                <span class="service-price">₦12,000</span>
+                            </div>
+                            <p class="service-description">Personalized meditation and mindfulness training to develop mental clarity, emotional balance, and inner peace.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> 1 hour</span>
+                                <span class="service-type"><i class="fas fa-user"></i> Private</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Meditation & Mindfulness - Group" data-price="₦7,000/person" data-message="Hi! I'd like to book a Group Meditation & Mindfulness Session at ₦7,000 per person (4+ people). Please provide more details.">
+                            <div class="service-header">
+                                <h3 class="service-name">Meditation & Mindfulness - Group</h3>
+                                <span class="service-price">₦7,000/person</span>
+                            </div>
+                            <p class="service-description">Group meditation sessions for 4+ people, creating a supportive environment for collective mindfulness practice.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> 1 hour</span>
+                                <span class="service-type"><i class="fas fa-users"></i> 4+ people</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialized Tab -->
+                <div class="tab-content" id="specialized">
+                    <div class="services-grid">
+                        <div class="service-item" data-service="Day Retreat" data-price="₦80,000 - ₦150,000" data-message="Hi! I'd like to book a Day Retreat (₦80,000 - ₦150,000). Please provide more details about programs and dates.">
+                            <div class="service-header">
+                                <h3 class="service-name">Day Retreat</h3>
+                                <span class="service-price">₦80,000 - ₦150,000</span>
+                            </div>
+                            <p class="service-description">Immersive single-day experiences combining meditation, movement, and mindfulness practices for deep personal insight.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> Full Day</span>
+                                <span class="service-type"><i class="fas fa-mountain"></i> Retreat</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Weekend Camp" data-price="From ₦250,000" data-message="Hi! I'd like to book a Weekend Camp starting from ₦250,000. Please provide more details about programs and locations.">
+                            <div class="service-header">
+                                <h3 class="service-name">Weekend Camp</h3>
+                                <span class="service-price">From ₦250,000</span>
+                            </div>
+                            <p class="service-description">Multi-day intensive camps featuring comprehensive training in multiple disciplines for transformative experiences.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> 2-3 Days</span>
+                                <span class="service-type"><i class="fas fa-campground"></i> Camp</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Community Projects" data-price="₦150,000 - ₦500,000" data-message="Hi! I'd like to discuss Community Projects (₦150,000 - ₦500,000). Please provide more details about available programs.">
+                            <div class="service-header">
+                                <h3 class="service-name">Community Projects</h3>
+                                <span class="service-price">₦150,000 - ₦500,000</span>
+                            </div>
+                            <p class="service-description">Customized wellness programs designed for communities, schools, and organizations to promote collective well-being.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> Varies</span>
+                                <span class="service-type"><i class="fas fa-users"></i> Community</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Consulting Services" data-price="₦250,000 - ₦600,000" data-message="Hi! I'd like to discuss Consulting Services (₦250,000 - ₦600,000). Please provide more details about your consulting areas.">
+                            <div class="service-header">
+                                <h3 class="service-name">Consulting Services</h3>
+                                <span class="service-price">₦250,000 - ₦600,000</span>
+                            </div>
+                            <p class="service-description">Professional consulting in wellness program development, martial arts instruction, and personal development strategies.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-clock"></i> Project-based</span>
+                                <span class="service-type"><i class="fas fa-lightbulb"></i> Consulting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bundles Tab -->
+                <div class="tab-content" id="bundles">
+                    <div class="services-grid">
+                        <div class="service-item" data-service="Starter Bundle" data-price="₦55,000" data-message="Hi! I'd like to subscribe to the Starter Bundle at ₦55,000 for 4 sessions per month. Please provide more details.">
+                            <div class="service-header">
+                                <h3 class="service-name">Starter Bundle</h3>
+                                <span class="service-price">₦55,000</span>
+                            </div>
+                            <p class="service-description">4 sessions per month with flexible choice between Yoga, Karate, or Meditation. Perfect for beginners exploring wellness.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-calendar"></i> 4 sessions/month</span>
+                                <span class="service-type"><i class="fas fa-gift"></i> Bundle</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Premium Bundle" data-price="₦100,000" data-message="Hi! I'd like to subscribe to the Premium Bundle at ₦100,000 for 8 sessions per month plus 1 group class. Please provide more details.">
+                            <div class="service-header">
+                                <h3 class="service-name">Premium Bundle</h3>
+                                <span class="service-price">₦100,000</span>
+                            </div>
+                            <p class="service-description">8 sessions per month mixing wellness and martial arts, plus 1 corporate/group class. Comprehensive wellness package.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-calendar"></i> 8 sessions/month</span>
+                                <span class="service-type"><i class="fas fa-crown"></i> Premium</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-service="Elite Bundle" data-price="₦150,000" data-message="Hi! I'd like to subscribe to the Elite Bundle at ₦150,000 for 12 sessions per month with full access. Please provide more details.">
+                            <div class="service-header">
+                                <h3 class="service-name">Elite Bundle</h3>
+                                <span class="service-price">₦150,000</span>
+                            </div>
+                            <p class="service-description">12 sessions per month with full access to all services plus priority booking for corporate events and retreats.</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-calendar"></i> 12 sessions/month</span>
+                                <span class="service-type"><i class="fas fa-star"></i> Elite</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Packages Tab -->
+                <div class="tab-content" id="packages">
+                    <div class="services-grid">
+                        <!-- Karate -->
+                        <div class="service-item" data-service="Karate (12 sessions)" data-price="₦175,000" data-message="Hi! I'd like to signup for this Package 12 sessions at ₦175,000.">
+                            <div class="service-header">
+                                <h3 class="service-name">Karate</h3>
+                                <span class="service-price">₦175,000</span>
+                            </div>
+                            <p class="service-description">12 sessions of Karate training</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-calendar"></i> 12 sessions</span>
+                                <span class="service-type"><i class="fas fa-money-bill-wave"></i> ₦175,000</span>
+                                <span class="service-whatsapp"><i class="fab fa-whatsapp"></i> Click to Signup</span>
+                            </div>
+                        </div>
+                        <div class="service-item" data-service="Karate (8 sessions)" data-price="₦125,000" data-message="Hi! I'd like to signup for this Package 8 sessions at ₦125,000.">
+                            <div class="service-header">
+                                <h3 class="service-name">Karate</h3>
+                                <span class="service-price">₦125,000</span>
+                            </div>
+                            <p class="service-description">8 sessions of Karate training</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-calendar"></i> 8 sessions</span>
+                                <span class="service-type"><i class="fas fa-money-bill-wave"></i> ₦125,000</span>
+                                <span class="service-whatsapp"><i class="fab fa-whatsapp"></i> Click to Signup</span>
+                            </div>
+                        </div>
+                        <!-- Yoga -->
+                        <div class="service-item" data-service="Yoga (12 sessions)" data-price="₦175,000" data-message="Hi! I'd like to signup for this Package 12 sessions at ₦175,000.">
+                            <div class="service-header">
+                                <h3 class="service-name">Yoga</h3>
+                                <span class="service-price">₦175,000</span>
+                            </div>
+                            <p class="service-description">12 sessions of Yoga training</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-calendar"></i> 12 sessions</span>
+                                <span class="service-type"><i class="fas fa-money-bill-wave"></i> ₦175,000</span>
+                                <span class="service-whatsapp"><i class="fab fa-whatsapp"></i> Click to Signup</span>
+                            </div>
+                        </div>
+                        <div class="service-item" data-service="Yoga (8 sessions)" data-price="₦125,000" data-message="Hi! I'd like to signup for this Package 8 sessions at ₦125,000.">
+                            <div class="service-header">
+                                <h3 class="service-name">Yoga</h3>
+                                <span class="service-price">₦125,000</span>
+                            </div>
+                            <p class="service-description">8 sessions of Yoga training</p>
+                            <div class="service-details">
+                                <span class="service-duration"><i class="fas fa-calendar"></i> 8 sessions</span>
+                                <span class="service-type"><i class="fas fa-money-bill-wave"></i> ₦125,000</span>
+                                <span class="service-whatsapp"><i class="fab fa-whatsapp"></i> Click to Signup</span>
+                            </div>
+                        </div>
+
+                        <!-- Yoga Corporate Session -->
+                         <div class="service-item">
+                            <div class="service-header">
+                                <h3 class="service-name"><i class="fas fa-building tab-icon"></i>                                    &nbsp;Corporate Sessions </h3>
+                            </div>
+                            <div class="service-item-list" data-service="Intimate and Personalized (5-10 person)" data-price="₦65,000" data-message="Hi! I'd like to book for the Single Corporate Yoga session ₦65,000.">
+                                <div class="service-header">
+                                    <h4 class="Corporate-service-item"> Intimate and Personalized (5-10 person) </h4>
+                                    <span class="service-price">₦65,000</span>
+                                </div>
+                                <p class="service-description"> Recommended for CEO's, Executives, Managers...</p>
+                                <div class="service-details">
+                                    <span class="service-duration"><i class="fas fa-calendar"></i> Single sessions</span>
+                                    <span class="service-type"><i class="fas fa-info-circle"></i> &nbsp; Intimate & Personalized</span>
+                                    <span class="service-whatsapp"><i class="fab fa-whatsapp"></i> Click to Book</span>
+                                </div>
+                            </div>
+                            <div class="service-item-list" data-service="Package of 5 Sessions" data-price="₦275,000" data-message="Hi! I'd like to book for the 5 Corporate Yoga session ₦275,000.">
+                                <div class="service-header">
+                                    <h4 class="Corporate-service-item">Package of 5 Sessions </h4>
+                                    <span class="service-price">₦275,000</span>
+                                </div>
+                                <div class="service-details">
+                                    <span class="service-duration"><i class="fas fa-calendar"></i> 5 sessions</span>
+                                    <span class="service-type"><i class="fas fa-info-circle"></i> &nbsp; Intimate & Personalized</span>
+                                    <span class="service-whatsapp"><i class="fab fa-whatsapp"></i> Click to Book</span>
+                                </div>
+                            </div>
+                            <div class="service-item-list" data-service="Package of 10 Sessions" data-price="₦500,000" data-message="Hi! I'd like to book for the 10 Corporate Yoga session ₦500,000.">
+                                <div class="service-header">
+                                    <h4 class="Corporate-service-item">Package of 10 Sessions </h4>
+                                    <span class="service-price">₦500,000</span>
+                                </div>
+                                <div class="service-details">
+                                    <span class="service-duration"><i class="fas fa-calendar"></i> 10 sessions</span>
+                                    <span class="service-type"><i class="fas fa-info-circle"></i> &nbsp; Intimate & Personalized</span>
+                                    <span class="service-whatsapp"><i class="fab fa-whatsapp"></i> Click to Book</span>
+                                </div>
+                            </div>
+
+                            <!-- Corporate Session Small Group (10-15 employees) -->
+                            <div class="service-item-list" data-service="Small Group (10-15 person)" data-price="₦175,000" data-message="Hi! I'd like to book for the Small Group Single Corporate Yoga session ₦175,000.">
+                                <div class="service-header">
+                                    <h4 class="Corporate-service-item"> Small Group (10-15 person) </h4>
+                                    <span class="service-price">₦175,000</span>
+                                </div>
+                                
+                                <div class="service-details">
+                                    <span class="service-duration"><i class="fas fa-calendar"></i> Single sessions</span>
+                                    <span class="service-info"><i class="fas fa-info-circle"></i> &nbsp;Small Group</span>
+                                    <span class="service-whatsapp"><i class="fab fa-whatsapp"></i> Click to Book</span>
+                                </div>
+                            </div>
+                            <div class="service-item-list" data-service="Package of 5 Sessions (Small Group)" data-price="₦450,000" data-message="Hi! I'd like to book for the Small Group 5 Corporate Yoga session ₦450,000.">
+                                <div class="service-header">
+                                    <h4 class="Corporate-service-item">Package of 5 Sessions </h4>
+                                    <span class="service-price">₦450,000</span>
+                                </div>
+                                <div class="service-details">
+                                    <span class="service-duration"><i class="fas fa-calendar"></i> 5 sessions</span>
+                                    <span class="service-type"><i class="fas fa-info-circle"></i> &nbsp;Small Group</span>
+                                    <span class="service-whatsapp"><i class="fab fa-whatsapp"></i> Click to Book</span>
+                                </div>
+                            </div>
+                            <div class="service-item-list" data-service="Package of 10 Sessions (Small Group)" data-price="₦800,000" data-message="Hi! I'd like to book for the Small Group 10 Corporate Yoga session ₦800,000.">
+                                <div class="service-header">
+                                    <h4 class="Corporate-service-item">Package of 10 Sessions </h4>
+                                    <span class="service-price">₦800,000</span>
+                                </div>
+                                <div class="service-details">
+                                    <span class="service-duration"><i class="fas fa-calendar"></i> 10 sessions</span>
+                                    <span class="service-type"><i class="fas fa-info-circle"></i> &nbsp;Small Group</span>
+                                    <span class="service-whatsapp"><i class="fab fa-whatsapp"></i> Click to Book</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="featured">
+        <div class="featured-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    Featured
+                </div>
+                <h2 class="section-title font-display">Events & Programs</h2>
+                <p class="section-description">
+                    Dive into my visual journey.
+                </p>
+            </div>
+            
+            <div class="featured-content">
+                <div class="featured-tabs">
+                   <!-- <button class="featured-tab-button active" data-featured-tab="recent-events">
+                        <i class="fas fa-calendar-alt tab-icon"></i>
+                        Recent Events
+                    </button> -->
+                    <button class="featured-tab-button" data-featured-tab="programs">
+                        <i class="fas fa-dumbbell tab-icon"></i>
+                        Programs
+                    </button>
+                    <button class="featured-tab-button active" data-featured-tab="gallery">
+                        <i class="fas fa-images tab-icon"></i>
+                        Gallery
+                    </button>
+                </div>
+                
+                <div class="featured-tab-content">
+                    <!-- Recent Events Tab 
+                    <div class="featured-tab-panel active" id="recent-events">
+                        <div class="image-cloud">
+                            <div class="cloud-item large" style="--delay: 0.1s">
+                                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&h=200&fit=crop" alt="Yoga Workshop">
+                                <div class="cloud-overlay">
+                                    <h4>Corporate Yoga</h4>
+                                    <p>Team Building Session</p>
+                                </div>
+                            </div>
+                            <div class="cloud-item medium" style="--delay: 0.2s">
+                                <img src="images/iTAS banner.jpg" alt="Karate">
+                                <div class="cloud-overlay">
+                                    <h4>Karate Workshop</h4>
+                                    <p>Youth Training</p>
+                                </div>
+                            </div>
+                            <div class="cloud-item small" style="--delay: 0.3s">
+                                <img src="https://images.unsplash.com/photo-1545389336-8c6dfce0dbf6?w=200&h=150&fit=crop" alt="Meditation">
+                                <div class="cloud-overlay">
+                                    <h4>Meditation</h4>
+                                    <p>Mindfulness</p>
+                                </div>
+                            </div>
+                            <div class="cloud-item medium" style="--delay: 0.4s">
+                                <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=250&h=180&fit=crop" alt="Workshop">
+                                <div class="cloud-overlay">
+                                    <h4>Self-Defense</h4>
+                                    <p>Safety Workshop</p>
+                                </div>
+                            </div>
+                            <div class="cloud-item large" style="--delay: 0.5s">
+                                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=300&h=200&fit=crop" alt="Group Training">
+                                <div class="cloud-overlay">
+                                    <h4>Group Training</h4>
+                                    <p>Team Session</p>
+                                </div>
+                            </div>
+                            <div class="cloud-item small" style="--delay: 0.6s">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=150&fit=crop" alt="Advanced Karate">
+                                <div class="cloud-overlay">
+                                    <h4>Advanced</h4>
+                                    <p>Martial Arts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                    <!-- Programs Tab -->
+                    <div class="featured-tab-panel" id="programs">
+                        <div class="programs-grid">
+                            <div class="program-card">
+                                <img src="images/iTAS banner.jpg" alt="iTAS">
+                                <div class="program-info">
+                                    <h3>ITAS Network</h3>
+                                    <p>
+                                        <strong>ITAS (Intensive Trainings and Seminars)</strong> is a multidisciplinary training and development platform offering transformative programs that enhance personal, professional, physical, and organizational growth.
+                                    </p>
+                                    <span class="program-status">Coming soon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Tab -->
+                    <div class="featured-tab-panel active" id="gallery">
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="images/MSP_3534.jpg" alt="Training">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/taichi-fan-snake-through-the-grass.JPG" alt="Karate">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/SafeAwwas-112-selfdefence.jpg" alt="Yoga">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/wushu-1st-duan-single-me.jpg" alt="Meditation">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/karate-group-gedan-barai.jpg" alt="Workshop">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/stadiun@gana.jpeg" alt="Group">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section class="companies-section">
+        <div class="companies-container">
+            <!-- <h2 class="companies-title font-display">Affiliates</h2> -->
+            <div class="marquee-container">
+                <div class="marquee">
+                    <div class="company-logo"><img src="images/CLEAR Logo.png" alt="Company 1" class="company-logo"></div>
+                    <div class="company-logo"><img src="images/Sochin Shotokan Karate Do Logo.jpg" alt="Company 2" class="company-logo"></div>
+                    <div class="company-logo"><img src="images/cma-logo.jpg" alt="Company 3" class="company-logo"></div>
+                    <div class="company-logo"><img src="images/aikido-logo.jpg" alt="Company 4" class="company-logo"></div>
+                    <div class="company-logo"><img src="images/sra logo.png" alt="Company 5" class="company-logo"></div>
+                    <div class="company-logo"><img src="images/NKA  logo.jpg" alt="Company 6" class="company-logo"></div>
+                    <div class="company-logo"><img src="images/Word.Pyece Logo.png" alt="Company 7" class="company-logo"></div>
+                    <div class="company-logo"><img src="images/iTAS LOGO.png" alt="Company 8" class="company-logo"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="font-display">About</h2>
+                <p>
+                    With years of experience in Shotokan Karate, Yoga, Tai Chi, Qi-gong, I’ve guided students, organizations, and wellness seekers in building strength, balance, and mindfulness. My work  has connected me with  schools, hotels, corporate organizations, and wellness centers, delivering programs that blend traditional practices with modern needs.
+                </p>
+                <p>
+                    My journey began with traditional martial arts and has evolved to encompass a comprehensive 
+                    understanding of how physical practice, mental training, and spiritual development work 
+                    together to create lasting transformation.
+                </p>
+                
+                <div class="about-stats">
+                    <!-- <div class="stat">
+                        <span class="stat-number">60+</span>
+                        <span class="stat-label">Students Trained</span>
+                    </div> -->
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">7+</span>
+                        <span class="stat-label">Disciplines</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-image">
+                <img src="images/sr-img.jpg" alt="SIR.RICHQRD Training">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>SIR.RICHQRD</h3>
+                    <p>
+                        Empowering Minds, Enriching Bodies, Elevating Lives
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/sir.richqrd" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4> Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-fist-raised"></i> Martial Arts</a></li>
+                        <li><a href="#services"><i class="fas fa-leaf"></i> Wellness Programs</a></li>
+                        <li><a href="#services"><i class="fas fa-mountain"></i> Retreats & Camps</a></li>
+                        <li><a href="#services"><i class="fas fa-briefcase"></i> Corporate Training</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                        <li><a href="#services"><i class="fas fa-tag"></i> Pricing</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="#events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4> Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/2349077357013" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="mailto:sir.richqrd@gmail.com?subject=Inquiry%20from%20Website&body=Hello%20SIR.RICHQRD,%0A%0AI%20am%20interested%20in%20your%20services.%20Please%20contact%20me.%0A%0AThank%20you."><i class="fas fa-envelope"></i> Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 SIR.RICHQRD. All rights reserved.</p>
+                <p>Empowering Minds, Enriching Body, Elevating Lives</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                button.classList.add('active');
+                
+                // Show corresponding content
+                const targetId = button.dataset.tab;
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Active navigation link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+        
+        window.addEventListener('scroll', () => {
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'linear-gradient(135deg, var(--primary-800), var(--primary-900))';
+            } else {
+                navbar.style.background = 'linear-gradient(135deg, var(--primary-700), var(--primary-800))';
+            }
+        });
+        
+        // Clone marquee content for continuous scrolling
+        const marquee = document.querySelector('.marquee');
+        if (marquee) {
+            const marqueeContent = marquee.innerHTML;
+            marquee.innerHTML += marqueeContent;
+        }
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe service items
+        const serviceItems = document.querySelectorAll('.service-item');
+        serviceItems.forEach(item => observer.observe(item));
+        
+        // WhatsApp Modal Functionality
+       // Enhanced Booking Modal Functionality (WhatsApp + Email)
+        const bookingModal = document.getElementById('bookingModal'); // Updated ID
+        const modalServiceName = document.getElementById('modalServiceName');
+        const modalServicePrice = document.getElementById('modalServicePrice');
+        const modalMessage = document.getElementById('modalMessage');
+        const whatsappLink = document.getElementById('whatsappLink');
+        const emailLink = document.getElementById('emailLink'); // New email link
+        const modalClose = document.querySelector('.modal-close');
+        const modalCancel = document.querySelector('.modal-btn-cancel');
+
+        // Add click event to all service items
+        document.querySelectorAll('.service-item, .service-item-list').forEach(item => {
+            // Check if the item has the required data attributes
+            if (item.dataset.service) {
+                item.style.cursor = 'pointer';
+                
+                item.addEventListener('click', () => {
+                    const service = item.dataset.service;
+                    const price = item.dataset.price;
+                    const message = item.dataset.message;
+                    
+                    // Update modal content
+                    modalServiceName.textContent = service;
+                    modalServicePrice.textContent = price;
+                    modalMessage.textContent = 'Choose your preferred booking method below.';
+                    
+                    // Set WhatsApp link
+                    const encodedWhatsAppMessage = encodeURIComponent(message);
+                    const whatsappUrl = `https://wa.me/2349077357013?text=${encodedWhatsAppMessage}`;
+                    whatsappLink.href = whatsappUrl;
+                    whatsappLink.target = '_blank';
+                    
+                    // Set Email link
+                    const emailSubject = encodeURIComponent(`Service Booking: ${service}`);
+                    const emailBody = encodeURIComponent(`Hello SIR.RICHQRD,
+
+        I am interested in booking the following service:
+
+        Service: ${service}
+        Price: ${price}
+
+        ${message.replace(/Hi! I'd like to book|Hi! I'd like to signup for this Package|Hi! I'd like to discuss|Please provide more details about/g, '').trim()}
+
+        Please provide me with:
+        - Available dates and times
+        - Location details
+        - Any preparation requirements
+        - Payment information
+
+        My preferred contact method: Email
+        Alternative contact: WhatsApp (+234 907 735 7013)
+
+        Thank you for your time. I look forward to hearing from you soon.
+
+        Best regards`);
+                    
+                    const emailUrl = `mailto:sir.richqrd@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+                    emailLink.href = emailUrl;
+                    
+                    // Debug logs
+                    console.log('WhatsApp URL:', whatsappUrl);
+                    console.log('Email URL:', emailUrl);
+                    
+                    // Show modal
+                    bookingModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+        });
+
+        // Enhanced WhatsApp click handler
+        if (whatsappLink) {
+            whatsappLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const currentUrl = this.href;
+                
+                console.log('WhatsApp link clicked. URL:', currentUrl);
+                
+                if (currentUrl && currentUrl !== '#' && currentUrl !== window.location.href + '#') {
+                    try {
+                        const newWindow = window.open(currentUrl, '_blank');
+                        
+                        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                            console.log('Window.open failed, trying location.href');
+                            window.location.href = currentUrl;
+                        } else {
+                            console.log('WhatsApp opened successfully');
+                        }
+                        
+                        setTimeout(() => {
+                            closeBookingModal();
+                        }, 500);
+                        
+                    } catch (error) {
+                        console.error('Error opening WhatsApp:', error);
+                        window.location.href = currentUrl;
+                    }
+                }
+            });
+        }
+
+        // Email click handler
+        if (emailLink) {
+            emailLink.addEventListener('click', function(e) {
+                console.log('Email link clicked. URL:', this.href);
+                
+                // Let the default mailto: behavior work
+                // Close modal after a short delay
+                setTimeout(() => {
+                    closeBookingModal();
+                }, 500);
+            });
+        }
+
+        // Close modal function
+        function closeBookingModal() {
+            bookingModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal events
+        if (modalClose) modalClose.addEventListener('click', closeBookingModal);
+        if (modalCancel) modalCancel.addEventListener('click', closeBookingModal);
+        bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) closeBookingModal();
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && bookingModal.classList.contains('active')) {
+                closeBookingModal();
+            }
+        });
+
+        // Featured section tab functionality - CORRECTED VERSION
+        const featuredTabButtons = document.querySelectorAll('.featured-tab-button');
+        const featuredTabPanels = document.querySelectorAll('.featured-tab-panel');
+
+        console.log('Featured tab buttons:', featuredTabButtons.length);
+        console.log('Featured tab panels:', featuredTabPanels.length);
+
+        featuredTabButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                console.log('Featured tab clicked:', button.dataset.featuredTab);
+                
+                // Remove active class from all tabs
+                featuredTabButtons.forEach(btn => btn.classList.remove('active'));
+                featuredTabPanels.forEach(panel => panel.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                button.classList.add('active');
+                
+                // Show corresponding panel
+                const targetId = button.dataset.featuredTab;
+                const targetPanel = document.getElementById(targetId);
+                
+                console.log('Target ID:', targetId);
+                console.log('Target panel:', targetPanel);
+                
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                    console.log('Panel activated successfully');
+                } else {
+                    console.error('Panel not found for ID:', targetId);
+                }
+            });
+        });
+        
+        // 3. Mobile Menu Functionality
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileToggle.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    
+        
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+// Gallery Lightbox Functionality
+const lightboxOverlay = document.getElementById('lightboxOverlay');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const currentIndexSpan = document.getElementById('currentIndex');
+        const totalImagesSpan = document.getElementById('totalImages');
+
+        let currentImageIndex = 0;
+        let galleryImages = [];
+        let isGalleryInitialized = false;
+
+        // Initialize gallery - Updated to work with your existing gallery structure
+        function initializeGallery() {
+            // Only initialize once to avoid duplicate event listeners
+            if (isGalleryInitialized) return;
+            
+            // Target your specific gallery structure in the Featured section
+            const galleryItems = document.querySelectorAll('#gallery .gallery-grid .gallery-item');
+            
+            if (galleryItems.length === 0) {
+                console.log('No gallery items found');
+                return;
+            }
+            
+            galleryImages = Array.from(galleryItems).map(item => {
+                const img = item.querySelector('img');
+                return {
+                    src: img.src,
+                    alt: img.alt || 'Gallery image'
+                };
+            });
+            
+            if (totalImagesSpan) {
+                totalImagesSpan.textContent = galleryImages.length;
+            }
+            
+            // Add click event to each gallery item
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openLightbox(index);
+                });
+                
+                // Add pointer cursor to indicate clickable
+                item.style.cursor = 'pointer';
+            });
+            
+            isGalleryInitialized = true;
+            console.log(`Gallery initialized with ${galleryImages.length} images`);
+        }
+
+       // Initialize gallery when DOM is loaded and featured tabs are set up
+        function setupGalleryInitialization() {
+            // Wait a bit for all elements to be ready
+            setTimeout(() => {
+                // Check if gallery tab is currently visible
+                const galleryPanel = document.getElementById('gallery');
+                if (galleryPanel && galleryPanel.classList.contains('active')) {
+                    initializeGallery();
+                }
+            }, 200);
+        }
+
+        // Enhanced featured tab functionality with gallery initialization
+        featuredTabButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                console.log('Featured tab clicked:', button.dataset.featuredTab);
+                
+                // Remove active class from all tabs
+                featuredTabButtons.forEach(btn => btn.classList.remove('active'));
+                featuredTabPanels.forEach(panel => panel.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                button.classList.add('active');
+                
+                // Show corresponding panel
+                const targetId = button.dataset.featuredTab;
+                const targetPanel = document.getElementById(targetId);
+                
+                console.log('Target ID:', targetId);
+                console.log('Target panel:', targetPanel);
+                
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                    console.log('Panel activated successfully');
+                    
+                    // Initialize gallery if gallery tab is clicked
+                    if (targetId === 'gallery') {
+                        setTimeout(() => {
+                            initializeGallery();
+                        }, 100);
+                    }
+                } else {
+                    console.error('Panel not found for ID:', targetId);
+                }
+            });
+        });
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', setupGalleryInitialization);
+    </script>
+
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="lightboxClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="lightbox-counter" id="lightboxCounter">
+                <span id="currentIndex">1</span> / <span id="totalImages">6</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
