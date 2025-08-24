@@ -450,3 +450,9 @@ const lightboxOverlay = document.getElementById('lightboxOverlay');
         // Update countdown immediately and then every second
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/sw.js").then(() => {
+                console.log("Service Worker Registered!");
+            });
+        }
