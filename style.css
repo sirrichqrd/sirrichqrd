@@ -228,6 +228,14 @@
     line-height: 1.5;
 }
 
+.service-info {
+    color: var(--neutral-600);
+    padding-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+}
+
 .service-details {
     display: flex;
     align-items: center;
