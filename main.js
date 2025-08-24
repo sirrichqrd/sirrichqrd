@@ -91,8 +91,7 @@
         const serviceItems = document.querySelectorAll('.service-item');
         serviceItems.forEach(item => observer.observe(item));
         
-        // WhatsApp Modal Functionality
-       // Enhanced Booking Modal Functionality (WhatsApp + Email)
+       // Booking Modal Functionality (WhatsApp + Email)
         const bookingModal = document.getElementById('bookingModal'); // Updated ID
         const modalServiceName = document.getElementById('modalServiceName');
         const modalServicePrice = document.getElementById('modalServicePrice');
@@ -126,30 +125,33 @@
                     
                     // Set Email link
                     const emailSubject = encodeURIComponent(`Service Booking: ${service}`);
-                    const emailBody = encodeURIComponent(`Hello SIR.RICHQRD,
+                    const emailBody = [
+                    `Hello SIR.RICHQRD,`,
+                    ``,
+                    `I am interested in booking the following service:`,
+                    ``,
+                    `Service: ${service}`,
+                    `Price: ${price}`,
+                    ``,
+                    message.replace(/Hi! I'd like to book|Hi! I'd like to signup for this Package|Hi! I'd like to discuss|Please provide more details about/g, '').trim(),
+                    ``,
+                    `Please provide me with:`,
+                    `- Available dates and times`,
+                    `- Location details`,
+                    `- Any preparation requirements`,
+                    `- Payment information`,
+                    ``,
+                    `My preferred contact method: write your contact here "WhatsApp/Email/Phone"`,
+                    `Alternative contact: "WhatsApp number or phone number" (if applicable)`,
+                    ``,
+                    `Thank you for your time. I look forward to hearing from you soon.`,
+                    ``,
+                    `Best regards`
+                    ].join("%0A");
 
-        I am interested in booking the following service:
-
-        Service: ${service}
-        Price: ${price}
-
-        ${message.replace(/Hi! I'd like to book|Hi! I'd like to signup for this Package|Hi! I'd like to discuss|Please provide more details about/g, '').trim()}
-
-        Please provide me with:
-        - Available dates and times
-        - Location details
-        - Any preparation requirements
-        - Payment information
-
-        My preferred contact method: Email
-        Alternative contact: WhatsApp (+234 907 735 7013)
-
-        Thank you for your time. I look forward to hearing from you soon.
-
-        Best regards`);
-                    
-                    const emailUrl = `mailto:sir.richqrd@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+                    const emailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=sir.richqrd@gmail.com&su=${emailSubject}&body=${emailBody}`;
                     emailLink.href = emailUrl;
+                    emailLink.target = '_blank';
                     
                     // Debug logs
                     console.log('WhatsApp URL:', whatsappUrl);
