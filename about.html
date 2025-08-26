@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Me - SIR.RICHQRD | Richard Abraham Ugbo-Ojoide</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Richard Abraham Ugbo-Ojoide - Martial Artist, Holistic Health Practitioner, and Yoga Instructor passionate about blending tradition, culture, and modern wellness.">
+  <meta name="keywords" content="Richard Abraham Ugbo-Ojoide, martial artist, yoga instructor, holistic health practitioner, Shotokan Karate, wellness, fitness, ITAS">
+  <meta name="author" content="SIR.RICHQRD">
+
+  <!-- Social Sharing -->
+  <meta property="og:title" content="About Me - SIR.RICHQRD | Richard Abraham Ugbo-Ojoide">
+  <meta property="og:description" content="Martial Artist, Holistic Health Practitioner, and Yoga Instructor passionate about blending tradition, culture, and modern wellness.">
+  <meta property="og:image" content="https://richqrd.netlify.app/images/richqrd-logo.webp">
+  <meta property="og:url" content="https://richqrd.netlify.app/about">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Inline CSS for specific styles -->
+  <style>
+    :root {
+        --primary-100: #FDEAEA; --primary-200: #F9C5C5; --primary-300: #F49F9F; --primary-400: #EF7979; 
+        --primary-500: #EB5454; --primary-600: #E52F2F; --primary-700: #910000; --primary-800: #8B0000; --primary-900: #660000;
+        --neutral-50: #FAFAFA; --neutral-100: #F5F5F5; --neutral-200: #E5E5E5; --neutral-300: #D4D4D4;
+        --neutral-400: #A3A3A3; --neutral-500: #737373; --neutral-600: #525252; --neutral-700: #404040; --neutral-800: #262626; --neutral-900: #171717;
+        --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05); 
+        --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1); 
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1); 
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1); 
+        --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
+        --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: var(--neutral-800);
+        background-image: url('images/bgwaterMaker.webp');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: contain;
+        background-position: right;
+    }
+
+    .font-display {
+        font-family: 'Playfair Display', serif;
+    }
+
+    /* Navigation */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: 80px;
+        background: linear-gradient(135deg, var(--primary-700), var(--primary-800));
+        backdrop-filter: blur(20px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .nav-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+    }
+
+    .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+    }
+
+    .nav-brand img {
+        width: 50px;
+        height: auto;
+    }
+
+    .nav-brand h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: white;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .back-link {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: var(--radius-md);
+        transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    /* Main Content */
+    .main-content {
+        margin-top: 80px;
+        min-height: calc(100vh - 80px);
+    }
+
+    .hero-section {
+        background: linear-gradient(135deg, var(--primary-700), var(--primary-800));
+        color: white;
+        padding: 80px 24px 60px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 100px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 24px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-title {
+        font-size: clamp(36px, 6vw, 64px);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* About Content */
+    .about-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 80px 24px;
+    }
+
+    .content-section {
+        margin-bottom: 60px;
+    }
+
+    .content-section h2 {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--neutral-900);
+        margin-bottom: 24px;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .content-section p {
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--neutral-700);
+        margin-bottom: 24px;
+    }
+
+    .content-section strong {
+        font-weight: 600;
+    }
+
+    .content-section em {
+        color: var(--primary-600);
+        font-style: italic;
+    }
+
+    .content-section h2{
+        padding-top: 50px;
+    }
+
+    /* Fitness Philosophy */
+    .fitness-philosophy {
+        background: white;
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--neutral-200);
+        margin: 40px 0;
+    }
+
+    .fitness-philosophy h3 {
+        color: var(--primary-700);
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .fitness-list {
+        list-style: none;
+    }
+
+    .fitness-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+        padding: 16px;
+        background: var(--neutral-50);
+        border-radius: var(--radius-md);
+        border-left: 4px solid var(--primary-500);
+    }
+
+    .fitness-list li::before {
+        content: '💪';
+        font-size: 20px;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .fitness-list li:nth-child(2)::before {
+        content: '🏃';
+    }
+
+    .fitness-list li:nth-child(3)::before {
+        content: '🤸';
+    }
+
+    .fitness-list li:nth-child(4)::before {
+        content: '⚖️';
+    }
+
+    /* Values and Mission */
+    .values-mission {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin: 60px 0;
+    }
+
+    .values-card, .mission-card {
+        background: white;
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--neutral-200);
+    }
+
+    .values-card h3, .mission-card h3 {
+        color: var(--primary-700);
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .values-list {
+        list-style: none;
+    }
+
+    .values-list li {
+        margin-bottom: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--neutral-100);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .values-list li:last-child {
+        border-bottom: none;
+    }
+
+    .values-list li::before {
+        content: '✨';
+        font-size: 16px;
+    }
+
+    /* Contact CTA */
+    .contact-cta {
+        background: linear-gradient(135deg, var(--primary-100), var(--neutral-50));
+        border-radius: var(--radius-lg);
+        padding: 48px;
+        text-align: center;
+        margin: 60px 0;
+    }
+
+    .contact-cta h3 {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--neutral-900);
+        margin-bottom: 16px;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .contact-cta p {
+        font-size: 18px;
+        color: var(--neutral-600);
+        margin-bottom: 32px;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 16px 32px;
+        border-radius: var(--radius-lg);
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+        color: white;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, var(--primary-700), var(--primary-800));
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-xl);
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn-secondary {
+        background: white;
+        color: var(--primary-700);
+        border: 2px solid var(--primary-200);
+    }
+
+    .btn-secondary:hover {
+        background: var(--primary-50);
+        border-color: var(--primary-300);
+        transform: translateY(-1px);
+        color: var(--primary-700);
+        text-decoration: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .nav-container {
+            padding: 0 16px;
+        }
+
+        .nav-brand h3 {
+            font-size: 18px;
+        }
+
+        .hero-section {
+            padding: 60px 16px 40px;
+        }
+
+        .about-content {
+            padding: 60px 16px;
+        }
+
+        .fitness-philosophy {
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .values-mission {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .values-card, .mission-card {
+            padding: 24px;
+        }
+
+        .contact-cta {
+            padding: 32px 24px;
+            margin: 40px 0;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn-primary, .btn-secondary {
+            width: 100%;
+            max-width: 280px;
+        }
+    }
+  </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="images/sir.richqrd-logo.webp" alt="SIR.RICHQRD">
+                <h3>SIR.RICHQRD</h3>
+            </a>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    
+
+        <!-- About Content -->
+        <div class="about-content">
+            <div class="content-section">
+                <h2 class="font-display">About</h2>
+                <p>
+                    Hello, I'm <strong>Richard Abraham Ugbo-Ojoide</strong> — a <strong>Martial Artist, Holistic Health Practitioner, and Yoga Instructor</strong>, passionate about blending tradition, culture, and modern wellness.
+                </p>
+                
+                <p>
+                    For over a decade, I have dedicated myself to the study and practice of <strong>Shotokan Karate</strong>, holding a 2nd-degree black belt. My martial arts journey extends beyond Karate, touching disciplines like <strong>Aikido, Judo, Tai Chi, and Combat Jujutsu</strong>, each shaping how I view discipline, resilience, and self-mastery.
+                </p>
+
+                <p>
+                    I also work closely with <strong>Shihandai 'Femi Johnson</strong>, popularly known as <em>the Sensei</em>, Founder and CEO of the sister companies <strong>Classical Martial Arts (CMA)</strong> and <strong>CLEAR (Center for Lifestyle Enhancement and Re-engineering)</strong>. Under his leadership, I serve as a <strong>Senior Associate Instructor at CMA</strong> and the <strong>Lead Instructor at CLEAR</strong>, where we bring both martial arts and holistic health into structured learning experiences for diverse audiences.
+                </p>
+
+                <p>
+                    At the same time, my path in <strong>holistic health</strong> has grown into a lifelong calling. As a certified instructor of <strong>Yoga, Tai Chi, and Qi-gong</strong>, I bring ancient practices into modern spaces—helping individuals and organizations find balance, strength, and clarity. I've had the privilege of working with respected establishments including <strong>Fraser Suites, Peace Media Hotels, and Blossom Health</strong>, providing wellness programs that nurture both body and mind.
+                </p>
+            </div>
+
+            <!-- Fitness Philosophy -->
+            <div class="fitness-philosophy">
+                <h3>
+                    <i class="fas fa-heartbeat"></i>
+                    My Fitness Philosophy
+                </h3>
+                <p>
+                    Beyond techniques and titles, what truly defines me is my commitment to <strong>wellness as a way of life</strong>. To me, fitness isn't just about how much you can lift or how long you can hold a plank (though that has its place!). I believe fitness is about:
+                </p>
+                <ul class="fitness-list">
+                    <li>
+                        Being able to <strong>carry yourself (your body weight) confidently</strong>.
+                    </li>
+                    <li>
+                        Having the stamina to <strong>run for your life (literally!) without running out of breath</strong> — that's good cardio.
+                    </li>
+                    <li>
+                        Doing your daily chores without muscle restraints, stiff joints, or cracks — that's <strong>mobility and flexibility</strong>.
+                    </li>
+                    <li>
+                        Building arm strength and foot balance so that you're not reaching for a walking stick at 60.
+                    </li>
+                </ul>
+                <p>
+                    I believe this is <strong>essential to your fitness journey</strong>. And yes — I can help you achieve that. Whether you're already on your path, just starting, or even just thinking about it, I provide personalized structures tailored to your specific health and fitness needs.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <p>
+                    Currently, I'm building <strong>ITAS (Intensive Training and Seminars)</strong>, a platform that brings together <strong>martial arts, holistic health, leadership, and capacity building</strong> into transformative experiences. ITAS is my vision for empowering individuals and communities through skill, discipline, and cultural wellness.
+                </p>
+
+                <p>
+                    Outside the dojo and studio, I'm also a <strong>creative</strong>. My background and hobbies in <strong>writing (especially poetry), graphic design, UI/UX, mobile photography, and content creation</strong> allow me to present ideas in fresh and engaging ways, bridging traditional practices with modern storytelling.
+                </p>
+            </div>
+
+            <!-- Values and Mission -->
+            <div class="values-mission">
+                <div class="values-card">
+                    <h3>
+                        <i class="fas fa-gem"></i>
+                        My Core Values
+                    </h3>
+                    <ul class="values-list">
+                        <li><strong>Empowering Minds, Enriching Bodies, Elevating Lives</strong></li>
+                        <li><strong>Discipline & Growth</strong> – Always evolving through learning and teaching.</li>
+                        <li><strong>Holistic Health</strong> – Approaching wellness in body, mind, and spirit.</li>
+                        <li><strong>Culture & Connection</strong> – Honoring traditions while engaging the modern world.</li>
+                    </ul>
+                </div>
+
+                <div class="mission-card">
+                    <h3>
+                        <i class="fas fa-compass"></i>
+                        My Mission
+                    </h3>
+                    <p>
+                        To serve as a <strong>Global Cultural Wellness Diplomat</strong>, using martial arts, yoga, and holistic healing to <strong>bridge cultures, empower communities, and inspire healthier ways of living</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="contact-cta">
+                <h3>Ready to Begin Your Wellness Journey?</h3>
+                <p>
+                    Let's work together to create a personalized path to your health and fitness goals.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/2349077357013" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i>
+                        Get Started Today
+                    </a>
+                    <a href="index.html#services" class="btn-secondary">
+                        <i class="fas fa-eye"></i>
+                        View Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/sir.richqrd-logo.webp" loading="lazy" class="footer-logo" alt="SIR.RICHQRD'S LOGO" width="50" height="50">&nbsp;<h3>SIR.RICHQRD</h3>
+                    <p>
+                        Empowering Minds, Enriching Bodies, Elevating Lives
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/sir.richqrd" target="_blank" class="social-link" alt="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@sir.richqrds?is_from_webapp=1&sender_device=pc" target="_blank" class="social-link" alt="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://web.facebook.com/richard.abraham.5036459/" target="_blank" class="social-link" alt="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/richqrd-abraham-09737b183?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYKQKGDWbQ12qBWGcqaVCeA%3D%3D" target="_blank" class="social-link" alt="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4> Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-fist-raised"></i> Martial Arts</a></li>
+                        <li><a href="#services"><i class="fas fa-leaf"></i> Wellness Programs</a></li>
+                        <li><a href="#services"><i class="fas fa-mountain"></i> Retreats & Camps</a></li>
+                        <li><a href="#services"><i class="fas fa-briefcase"></i> Corporate Training</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                        <li><a href="#services"><i class="fas fa-tag"></i> Pricing</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="#events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4> Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/2349077357013" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                       <li>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sir.richqrd@gmail.com&su=Inquiry%20from%20Website&body=Hello%20SIR.RICHQRD,%0A%0AI%20am%20interested%20in%20your%20services.%20Please%20contact%20me.%0A%0AThank%20you." target="_blank">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        </li>
+                        <li><a href="tel:07071180535"><i class="fas fa-phone"></i> 0707 118 0535</a></li>
+                        <li><a href="https://www.google.com/maps/place/Abuja,+Nigeria/" target="_blank"><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 SIR.RICHQRD. All rights reserved.</p>
+                <p>Empowering Minds, Enriching Bodies, Elevating Lives</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

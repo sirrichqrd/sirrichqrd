@@ -290,109 +290,7 @@
                 mobileToggle.querySelector('i').classList.add('fa-bars');
             });
         });
-// Gallery Lightbox Functionality
-const lightboxOverlay = document.getElementById('lightboxOverlay');
-        const lightboxImage = document.getElementById('lightboxImage');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxPrev = document.getElementById('lightboxPrev');
-        const lightboxNext = document.getElementById('lightboxNext');
-        const currentIndexSpan = document.getElementById('currentIndex');
-        const totalImagesSpan = document.getElementById('totalImages');
 
-        let currentImageIndex = 0;
-        let galleryImages = [];
-        let isGalleryInitialized = false;
-
-        // Initialize gallery - Updated to work with your existing gallery structure
-        function initializeGallery() {
-            // Only initialize once to avoid duplicate event listeners
-            if (isGalleryInitialized) return;
-            
-            // Target your specific gallery structure in the Featured section
-            const galleryItems = document.querySelectorAll('#gallery .gallery-grid .gallery-item');
-            
-            if (galleryItems.length === 0) {
-                console.log('No gallery items found');
-                return;
-            }
-            
-            galleryImages = Array.from(galleryItems).map(item => {
-                const img = item.querySelector('img');
-                return {
-                    src: img.src,
-                    alt: img.alt || 'Gallery image'
-                };
-            });
-            
-            if (totalImagesSpan) {
-                totalImagesSpan.textContent = galleryImages.length;
-            }
-            
-            // Add click event to each gallery item
-            galleryItems.forEach((item, index) => {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openLightbox(index);
-                });
-                
-                // Add pointer cursor to indicate clickable
-                item.style.cursor = 'pointer';
-            });
-            
-            isGalleryInitialized = true;
-            console.log(`Gallery initialized with ${galleryImages.length} images`);
-        }
-
-       // Initialize gallery when DOM is loaded and featured tabs are set up
-        function setupGalleryInitialization() {
-            // Wait a bit for all elements to be ready
-            setTimeout(() => {
-                // Check if gallery tab is currently visible
-                const galleryPanel = document.getElementById('gallery');
-                if (galleryPanel && galleryPanel.classList.contains('active')) {
-                    initializeGallery();
-                }
-            }, 200);
-        }
-
-        // Enhanced featured tab functionality with gallery initialization
-        featuredTabButtons.forEach((button, index) => {
-            button.addEventListener('click', () => {
-                console.log('Featured tab clicked:', button.dataset.featuredTab);
-                
-                // Remove active class from all tabs
-                featuredTabButtons.forEach(btn => btn.classList.remove('active'));
-                featuredTabPanels.forEach(panel => panel.classList.remove('active'));
-                
-                // Add active class to clicked tab
-                button.classList.add('active');
-                
-                // Show corresponding panel
-                const targetId = button.dataset.featuredTab;
-                const targetPanel = document.getElementById(targetId);
-                
-                console.log('Target ID:', targetId);
-                console.log('Target panel:', targetPanel);
-                
-                if (targetPanel) {
-                    targetPanel.classList.add('active');
-                    console.log('Panel activated successfully');
-                    
-                    // Initialize gallery if gallery tab is clicked
-                    if (targetId === 'gallery') {
-                        setTimeout(() => {
-                            initializeGallery();
-                        }, 100);
-                    }
-                } else {
-                    console.error('Panel not found for ID:', targetId);
-                }
-            });
-        });
-
-        // Initialize everything when page loads
-        document.addEventListener('DOMContentLoaded', setupGalleryInitialization);
-        
         
         // Set the target date (change this to your desired date)
         const targetDate = new Date("October 23, 2026 09:00:00").getTime();
@@ -454,5 +352,23 @@ const lightboxOverlay = document.getElementById('lightboxOverlay');
         if ("serviceWorker" in navigator) {
             navigator.serviceWorker.register("/sw.js").then(() => {
                 console.log("Service Worker Registered!");
+            });
+        }
+
+        // Force unregister old service workers during development
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(regs => {
+                regs.forEach(reg => reg.unregister());
+                console.log("All service workers unregistered!");
+            });
+        }
+
+        if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(reg => {
+                console.log('Service Worker registered!', reg);
+                }).catch(err => {
+                console.error('Service Worker registration failed:', err);
+                });
             });
         }
