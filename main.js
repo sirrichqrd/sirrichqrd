@@ -372,3 +372,35 @@
                 });
             });
         }
+
+            function showLoading(show = true) {
+      isLoading = show;
+      const loader = document.getElementById('loadingScreen');
+      loader.style.display = show ? 'flex' : 'none';
+      
+      // Add a timeout to ensure loading screen doesn't get stuck
+      if (show) {
+        setTimeout(() => {
+          if (isLoading) {
+            console.warn('Loading timeout - forcing display');
+            hideLoading();
+            showAuthAlert('Loading took too long. Please refresh the page.', 'warning');
+          }
+        }, 15000); // 15 seconds timeout
+      }
+    }
+
+    function hideLoading() {
+      isLoading = false;
+      document.getElementById('loadingScreen').style.display = 'none';
+    }
+
+    function formatDate(timestamp) {
+      if (!timestamp) return 'N/A';
+      const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+      return date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      });
+    }

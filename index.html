@@ -11,18 +11,18 @@
   <!-- Social Sharing -->
   <meta property="og:title" content="SIR.RICHQRD | Martial Arts & Wellness">
   <meta property="og:description" content="Martial Artist, Yoga & Tai Chi Instructor, Wellness Advocate, Founder of ITAS Network.">
-  <meta property="og:image" content="https://richqrd.netlify.app/images/rau%20LOGO%20alternative%20w.png">
+  <meta property="og:image" content="https://storage.googleapis.com/sir-richqrd/images/sir.richqrd-meta-og-img.webp">
   <meta property="og:url" content="https://richqrd.netlify.app">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SIR.RICHQRD | Martial Arts & Wellness">
   <meta name="twitter:description" content="Martial Artist, Yoga & Tai Chi Instructor, Wellness Advocate, Founder of ITAS Network.">
-  <meta name="twitter:image" content="https://richqrd.netlify.app/images/rau%20LOGO%20alternative%20w.png">
+  <meta name="twitter:image" content="https://storage.googleapis.com/sir-richqrd/images/sir.richqrd-meta-og-img.webp">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/svg" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="shortcut icon" type="image/svg" href="favicon.svg">
 
   <!-- Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,11 +30,13 @@
 
   <!-- Preload fonts (improves CLS/FCP) -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-  <link rel="preload" href="images/sir.richqrd-logo.webp" as="image">
+  <link rel="preload" href="https://storage.googleapis.com/sir-richqrd/images/sir.richqrd-logo.webp" as="image">
+
+  <!-- Load Inertia font -->
+  <link href="https://fonts.cdnfonts.com/css/inertia" rel="stylesheet">
 
   <!-- Preload hero/brand images -->
-  <link rel="preload" href="images/bgwaterMaker.webp" as="image">
-  <link rel="preload" href="images/sir.richqrd-logo.webp" as="image">
+  <link rel="preload" href="https://storage.googleapis.com/sir-richqrd/images/sir.richqrd-logo.webp" as="image">
 
   <!-- Async Bootstrap CSS -->
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -89,7 +91,7 @@
         font-family: 'Inter', sans-serif;
         line-height: 1.6;
         color: var(--neutral-800);
-        background-image: url('images/bgwaterMaker.webp');
+        background-image: url('https://storage.googleapis.com/sir-richqrd/images/bgwaterMaker.webp');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: contain;
@@ -142,7 +144,7 @@
         font-size: 24px;
         font-weight: 900;
         color: white;
-        font-family: 'Playfair Display' , sans-serif;
+        font-family: 'inertia regular';
         text-decoration: none;
         letter-spacing: -0.02em;
 
@@ -155,7 +157,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('images/sir.richqrd-watermaker-logo.svg') no-repeat center center;
+            background: url('https://storage.googleapis.com/sir-richqrd/images/sir.richqrd-watermaker-logo.svg') no-repeat center center;
             background-size: cover;
             opacity: 0.1;
             z-index: -1;
@@ -218,7 +220,7 @@
     /* Hero Section */
     .hero {
         background: linear-gradient(135deg, var(--primary-700), var(--primary-800));
-        padding: 160px 24px 120px;
+        padding: 85px 50px 10px;
         color: white;
         position: relative;
         overflow: hidden;
@@ -260,7 +262,7 @@
     }
 
     .hero h1 {
-        font-size: clamp(48px, 8vw, 96px);
+        font-size: clamp(48px, 8vw, 80px);
         font-weight: 800;
         line-height: 1.1;
         letter-spacing: -0.04em;
@@ -337,12 +339,14 @@
   </style>
 </head>
 <body>
+    <div class="nav-container">
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <div class="navbar-brand fw-bold profile-section">
                 <a href="#home" class="logo">
-                    <img src="images/sir.richqrd-logo.webp" loading="lazy" alt="SIR.RICHQRD"  width="300" height="300" >
+                    <img src="https://storage.googleapis.com/sir-richqrd/images/sir.richqrd-logo.webp" loading="lazy" alt="SIR.RICHQRD" style="font-family:'Inertia Regular';font-weight:normal;font-size:25px" width="300" height="300" >
                      
                 </a>
             </div>
@@ -361,7 +365,7 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu (initially hidden) -->
+    <!-- Mobile Menu (initially hidden)-->
     <div class="mobile-menu">
         <ul class="mobile-nav-menu">
             <li class="mobile-nav-item">
@@ -380,8 +384,8 @@
                 <a href="#contact" class="mobile-nav-link">Contact</a>
             </li>
         </ul>
-    </div>
-
+    </div> 
+</div>
     <!-- Booking Modal Popover (WhatsApp + Email) -->
     <div class="modal-overlay" id="bookingModal">
         <div class="booking-modal">
@@ -410,46 +414,111 @@
         </div>
     </div>
 
+<!-- CAROUSEL -->
+<div class="carousel" id="heroCarousel" aria-label="Training carousel">
+  <div class="carousel-viewport">
+    <div class="carousel-track">
+
+      <!-- Yoga -->
+      <article class="slide" style="--tint: 244 114 182">
+        <img 
+          loading="lazy"
+          src="image-resizer/output/yoga-carousel-1200.webp"
+          srcset="
+            image-resizer/output/yoga-carousel-600.webp 600w,
+            image-resizer/output/yoga-carousel-1200.webp 1200w,
+            image-resizer/output/yoga-carousel-2000.webp 2000w
+          "
+          sizes="(max-width: 768px) 100vw, 1200px"
+          alt="Yoga">
+        <div class="caption"><h2>Yoga</h2></div>
+      </article>
+
+      <!-- Aikido -->
+      <article class="slide" style="--tint: 139 92 246">
+        <img 
+          loading="lazy"
+          src="image-resizer/output/aikido-carousel-1200.webp"
+          srcset="
+            image-resizer/output/aikido-carousel-600.webp 600w,
+            image-resizer/output/aikido-carousel-1200.webp 1200w,
+            image-resizer/output/aikido-carousel-2000.webp 2000w
+          "
+          sizes="(max-width: 768px) 100vw, 1200px"
+          alt="Aikido">
+        <div class="caption"><h2>Aikido</h2></div>
+      </article>
+
+      <!-- Selfdefence -->
+      <article class="slide" style="--tint: 245 158 11">
+        <img 
+          loading="lazy"
+          src="image-resizer/output/self-defence-carousel-1200.webp"
+          srcset="
+            image-resizer/output/self-defence-carousel-600.webp 600w,
+            image-resizer/output/self-defence-carousel-1200.webp 1200w,
+            image-resizer/output/self-defence-carousel-2000.webp 2000w
+          "
+          sizes="(max-width: 768px) 100vw, 1200px"
+          alt="Selfdefence">
+        <div class="caption"><h2>Selfdefence</h2></div>
+      </article>
+
+      <!-- Tai Chi & Qigong -->
+      <article class="slide" style="--tint: 34 211 238">
+        <img 
+          loading="lazy"
+          src="image-resizer/output/taichi-wave-hands-1200.webp"
+          srcset="
+            image-resizer/output/taichi-wave-hands-600.webp 600w,
+            image-resizer/output/taichi-wave-hands-1200.webp 1200w,
+            image-resizer/output/taichi-wave-hands-2000.webp 2000w
+          "
+          sizes="(max-width: 768px) 100vw, 1200px"
+          alt="Tai Chi & Qigong">
+        <div class="caption"><h2>Tai Chi &amp; Qigong</h2></div>
+      </article>
+    </div>
+
+    <button class="nav prev" aria-label="Previous slide">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="nav next" aria-label="Next slide">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="dots" role="tablist" aria-label="Slide navigation">
+    <button class="dot" aria-label="Tai Chi & Qigong"></button>
+    <button class="dot" aria-label="Aikido"></button>
+    <button class="dot" aria-label="Yoga"></button>
+    <button class="dot" aria-label="Selfdefence"></button>
+  </div>
+</div>
+<!-- /CAROUSEL -->
+
+
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-sparkles"></i>
-                Transforming Lives Through Movement
-            </div>
-            
-            <h1 class="font-display">Empowering Minds,<br>Enriching Bodies,<br>Elevating Lives</h1>
-            
-            <p class="hero-subtitle">
-                Hi! I'm RICHQRD. Take a journey with me.
-            </p>
-            
-            <div class="hero-cta">
-                <a href="#services" class="btn-primary">
-                    Explore Services
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#about" class="btn-secondary">
-                    <i class="fas fa-play"></i>
-                    Learn More
-                </a>
-            </div>
-            
-            <div class="hero-visual">
-                <!-- <img src="images/taichi-fan-snake-through-the-grass.JPG" class="hero-image w-100 carousel-img" loading="lazy" alt="Martial Arts"> -->
-                
-                <div class="floating-card floating-card-1">
-                    <h4>Adaptive</h4>
-                    <p>Transformed through our programs</p>
-                </div>
-                
-                <div class="floating-card floating-card-2">
-                    <h4>Expert Training</h4>
-                    <p>Personalized coaching for fitness</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="home" class="hero hero--carousel">
+  <div class="hero-wrap">
+    <div class="hero-head">
+      <div class="hero-badge">
+        <i class="fas fa-sparkles"></i>
+        Transforming Lives Through Movement
+      </div>
+      <h1 class="font-display">Empowering Minds,<br>Enriching Bodies,<br>Elevating Lives</h1>
+      <p class="hero-subtitle">Hi! I'm RICHQRD. Take a journey with me.</p>
+      <div class="hero-cta">
+        <a href="#services" class="btn-primary">
+          Explore Services <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#about" class="btn-secondary">
+          <i class="fas fa-play"></i> Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Services Section -->
     <section id="services" class="services">
@@ -852,11 +921,11 @@
                         <i class="fas fa-calendar-alt tab-icon"></i>
                         Recent Events
                     </button> -->
-                    <button class="featured-tab-button" data-featured-tab="programs">
+                    <button class="featured-tab-button active" data-featured-tab="programs">
                         <i class="fas fa-dumbbell tab-icon"></i>
                         Programs
                     </button>
-                    <button class="featured-tab-button active" data-featured-tab="gallery">
+                    <button class="featured-tab-button" data-featured-tab="gallery">
                         <i class="fas fa-images tab-icon"></i>
                         Gallery
                     </button>
@@ -865,10 +934,18 @@
                 <div class="featured-tab-content">
                     
                     <!-- Programs Tab -->
-                    <div class="featured-tab-panel" id="programs">
+                    <div class="featured-tab-panel active" id="programs">
                         <div class="programs-grid">
                             <div class="program-card">
-                                <img src="images/iTAS-banner.webp" loading="lazy" alt="iTAS">
+                                <img 
+                                    src="image-resizer/output/iTAS-banner-1200.webp" 
+                                    srcset="
+                                        image-resizer/output/iTAS-banner-600.webp 600px,
+                                        image-resizer/output/iTAS-banner-1200.webp 1200px,
+                                        image-resizer/output/iTAS-banner-2000.webp 2000px
+                                    "
+                                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    loading="lazy" alt="iTAS" width="300" height="200">
                                 <div class="program-info">
                                     <h3>ITAS Network</h3>
                                     <p>
@@ -879,7 +956,15 @@
                             </div>
 
                             <div class="program-card">
-                                <img src="images/black belt.webp" loading="lazy" alt="3rd Degree Black Belt Grading">
+                                <img 
+                                    src="image-resizer/output/black belt-1200.webp" 
+                                    srcset="
+                                        image-resizer/output/black belt-600.webp 600px,
+                                        image-resizer/output/black belt-1200.webp 1200px,
+                                        image-resizer/output/black belt-2000.webp 2000px,
+                                    "
+                                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    loading="lazy" alt="3rd Degree Black Belt Grading" width="300" height="200">
                                 <div class="program-info">
                                     <h3>3rd Degree Black Belt Grading</h3>
                                     <p>
@@ -899,49 +984,103 @@
                     </div>
                     
 <!-- Gallery Tab -->
-<div class="featured-tab-panel active" id="gallery">
+<div class="featured-tab-panel" id="gallery">
   <div class="gallery-grid" id="my-gallery">
     
-    <a href="images/side-angle.webp" 
+    <a href="https://storage.googleapis.com/sir-richqrd/images/side-angle.webp" 
        data-pswp-width="1840" 
        data-pswp-height="1228" 
        class="gallery-item">
-      <img src="images/side-angle.webp" loading="lazy" alt="Training">
+      <img 
+        src="image-resizer/output/side-angle-1200.webp" 
+        srcset="
+          image-resizer/output/side-angle-600.webp 600px,
+          image-resizer/output/side-angle-1200.webp 1200px,
+          image-resizer/output/side-angle-2000.webp 2000px
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        loading="lazy" 
+        alt="Training">
     </a>
     
-    <a href="images/taichi-fan-snake-through-the-grass.webp" 
+    <a href="https://storage.googleapis.com/sir-richqrd/images/taichi-carousel.webp" 
        data-pswp-width="2826" 
        data-pswp-height="1889" 
        class="gallery-item">
-      <img src="images/taichi-fan-snake-through-the-grass.webp" loading="lazy" alt="Karate">
+      <img 
+        src="image-resizer/output/taichi-carousel-1200.webp" 
+        srcset="
+          image-resizer/output/taichi-carousel-600.webp 600px,
+          image-resizer/output/taichi-carousel-1200.webp 1200px,
+          image-resizer/output/taichi-carousel-2000.webp 2000px
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        loading="lazy" 
+        alt="Karate">
     </a>
     
-    <a href="images/SafeAwwas-111-self-defence.webp" 
+    <a href="https://storage.googleapis.com/sir-richqrd/images/SafeAwwas-111-self-defence.webp" 
        data-pswp-width="5245" 
        data-pswp-height="3806" 
        class="gallery-item">
-      <img src="images/SafeAwwas-111-self-defence.webp" loading="lazy" alt="Yoga">
+      <img 
+        src="image-resizer/output/SafeAwwas-111-self-defence-1200.webp" 
+        srcset="
+          image-resizer/output/SafeAwwas-111-self-defence-600.webp 600px,
+          image-resizer/output/SafeAwwas-111-self-defence-1200.webp 1200px,
+          image-resizer/output/SafeAwwas-111-self-defence-2000.webp 2000px
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        loading="lazy" 
+        alt="Yoga">
     </a>
     
-    <a href="images/wushu-1st-duan-single-me.webp" 
+    <a href="https://storage.googleapis.com/sir-richqrd/images/wushu-1st-duan-single-me.webp" 
        data-pswp-width="3321" 
        data-pswp-height="4976" 
        class="gallery-item">
-      <img src="images/wushu-1st-duan-single-me.webp" loading="lazy" alt="Meditation">
+      <img 
+        src="image-resizer/output/wushu-1st-duan-single-me-1200.webp" 
+        srcset="
+          image-resizer/output/wushu-1st-duan-single-me-600.webp 600px,
+          image-resizer/output/wushu-1st-duan-single-me-1200.webp 1200px,
+          image-resizer/output/wushu-1st-duan-single-me-2000.webp 2000px
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        loading="lazy" 
+        alt="Meditation">
     </a>
     
-    <a href="images/karate-group-gedan-barai.webp" 
+    <a href="https://storage.googleapis.com/sir-richqrd/images/karate-group-gedan-barai.webp" 
        data-pswp-width="3832" 
        data-pswp-height="2157.5" 
        class="gallery-item">
-      <img src="images/karate-group-gedan-barai.webp" loading="lazy" alt="Workshop">
+      <img 
+        src="image-resizer/output/karate-group-gedan-barai-1200.webp" 
+        srcset="
+          image-resizer/output/karate-group-gedan-barai-600.webp 600px,
+          image-resizer/output/karate-group-gedan-barai-1200.webp 1200px,
+          image-resizer/output/karate-group-gedan-barai-2000.webp 2000px
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        loading="lazy" 
+        alt="Workshop">
     </a>
     
-    <a href="images/stadiun@gana.webp" 
+    <a href="https://storage.googleapis.com/sir-richqrd/images/stadiun%40gana.webp" 
        data-pswp-width="4163" 
        data-pswp-height="5551" 
        class="gallery-item">
-      <img src="images/stadiun@gana.webp" loading="lazy" alt="Group">
+      <img 
+        src="image-resizer/output/stadiun%40gana-1200.webp" 
+        srcset="
+          image-resizer/output/stadiun%40gana-600.webp 600px,
+          image-resizer/output/stadiun%40gana-1200.webp 1200px,
+          image-resizer/output/stadiun%40gana-2000.webp 2000px
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        loading="lazy" 
+        alt="Group">
     </a>
 
   </div>
@@ -960,81 +1099,149 @@
             <div class="marquee-container">
                 <div class="marquee">
                     <div class="company-logo">
-                        <img src="images/CLEAR-logo.webp" alt="Company 1" loading="lazy" width="120" height="80" class="company-logo">
+                        <img 
+                            src="image-resizer/output/CLEAR-logo-1200.webp" 
+                            srcset="image-resizer/output/CLEAR-logo-600.webp 600w, image-resizer/output/CLEAR-logo-1200.webp 1200w"
+                            alt="Company 1" loading="lazy" width="120" height="80" class="company-logo">
                     </div>
                     <div class="company-logo">
-                        <img src="images/Sochin-Shotokan-Karate-Do-Logo.webp" alt="Company 2" loading="lazy" width="120" height="80" class="company-logo">
+                        <img 
+                            src="image-resizer/output/Sochin-Shotokan-Karate-Do-Logo-1200.webp" 
+                            srcset="image-resizer/output/Sochin-Shotokan-Karate-Do-Logo-600.webp 600w, image-resizer/output/Sochin-Shotokan-Karate-Do-Logo-1200.webp 1200w"
+                            alt="Company 2" loading="lazy" width="120" height="80" class="company-logo">                    
                     </div>
                     <div class="company-logo">
-                        <img src="images/cma-logo.webp" alt="Company 3" loading="lazy" width="120" height="80" class="company-logo">
+                        <img 
+                            src="image-resizer/output/cma-logo-1200.webp" 
+                            srcset="image-resizer/output/cma-logo-600.webp 600w, image-resizer/output/cma-logo-1200.webp 1200w"
+                            alt="Company 3" loading="lazy" width="120" height="80" class="company-logo">
                     </div>
                     <div class="company-logo">
-                        <img src="images/aikido-logo.webp" alt="Company 4" loading="lazy" width="120" height="80" class="company-logo">
+                        <img 
+                            src="image-resizer/output/aikido-logo-1200.webp" 
+                            srcset="image-resizer/output/aikido-logo-600.webp 600w, image-resizer/output/aikido-logo-1200.webp 1200w"
+                            alt="Company 4" loading="lazy" width="120" height="80" class="company-logo">
                     </div>
                     <div class="company-logo">
-                        <img src="images/sra-logo.webp" alt="Company 5" loading="lazy" width="120" height="80" class="company-logo">
+                        <img 
+                            src="image-resizer/output/sra-logo-1200.webp" 
+                            srcset="image-resizer/output/sra-logo-600.webp 600w, image-resizer/output/sra-logo-1200.webp 1200w"
+                            alt="Company 5" loading="lazy" width="120" height="80" class="company-logo">
                     </div>
                     <div class="company-logo">
-                        <img src="images/NKA-logo.webp" alt="Company 6" loading="lazy" width="120" height="80" class="company-logo">
+                        <img 
+                            src="image-resizer/output/NKA-logo-1200.webp" 
+                            srcset="image-resizer/output/NKA-logo-600.webp 600w, image-resizer/output/NKA-logo-1200.webp 1200w"
+                            alt="Company 6" loading="lazy" width="120" height="80" class="company-logo">
                     </div>
                     <div class="company-logo">
-                        <img src="images/Word-Pyece-Logo.webp" alt="Company 7" loading="lazy" width="120" height="80" class="company-logo">
+                        <img 
+                            src="image-resizer/output/Word-Pyece-Logo-1200.webp" 
+                            srcset="image-resizer/output/Word-Pyece-Logo-600.webp 600w, image-resizer/output/Word-Pyece-Logo-1200.webp 1200w"
+                            alt="Company 7" loading="lazy" width="120" height="80" class="company-logo">
                     </div>
                     <div class="company-logo">
-                        <img src="images/itas-logo.webp" alt="Company 8" loading="lazy" width="120" height="80" class="company-logo">
+                        <img 
+                            src="image-resizer/output/itas-logo-1200.webp" 
+                            srcset="image-resizer/output/itas-logo-600.webp 600w, image-resizer/output/itas-logo-1200.webp 1200w"
+                            alt="Company 8" loading="lazy" width="120" height="80" class="company-logo">
                     </div>
-                    </div>
-
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-container">
-            <div class="about-content">
-                <h2 class="font-display">About</h2>
-                <div class="about-text-container">
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="about-container">
+        <div class="about-content">
+            <h2 class="font-display">About</h2>
+            <div class="about-text-container">
+                <p>
+                    With years of experience in Shotokan Karate, Yoga, Tai Chi, Qi-gong, I've guided students, organizations, and wellness seekers in building strength, balance, and mindfulness. My work has connected me with schools, hotels, corporate organizations, and wellness centers, delivering programs that blend traditional practices with modern needs.
+                </p>
+                <p>
+                    My journey began with traditional martial arts and has evolved to encompass a comprehensive 
+                    understanding of how physical practice, mental training, and spiritual development work 
+                    together to create lasting transformation.
+                </p>
+
+                <!-- Hidden Extra Content -->
+                <div class="about-more-content">
+                    <!-- About extended content -->
+                    <p>Hello, I’m Richard Abraham Ugbo-Ojoide — a Martial Artist, Holistic Health Practitioner, and Yoga Instructor, passionate about blending tradition, culture, and modern wellness.</p>
+                    <p>For over a decade, I have dedicated myself to the study and practice of Shotokan Karate, holding a 2nd-degree black belt. My martial arts journey extends beyond Karate, touching disciplines like Aikido, Judo, Tai Chi, and Combat Jujutsu, each shaping how I view discipline, resilience, fitness and self-mastery.</p>
+                    <p>I also work closely with Shihandai ’Femi Johnson, popularly known as the Sensei, Founder and CEO of the sister companies Classical Martial Arts (CMA) and CLEAR (Center for Lifestyle Enhancement and Re-engineering). Under his leadership, I serve as a Senior Associate Instructor at CMA and the Lead Instructor at CLEAR, where we bring both martial arts and holistic health into structured learning experiences for diverse audiences.</p>
+                    <p>At the same time, my path in holistic health has grown into a lifelong calling. As a certified instructor of Yoga, Tai Chi, and Qi-gong, I bring ancient practices into modern spaces—helping individuals and organizations find balance, strength, and clarity. I’ve had the privilege of working with respected establishments including Fraser Suites, Peace Media Hotels, and Blossom Health, providing wellness programs that nurture both body and mind.</p>
+                    <h3 class="font-display">My Fitness Philosophy</h3>
                     <p>
-                        With years of experience in Shotokan Karate, Yoga, Tai Chi, Qi-gong, I've guided students, organizations, and wellness seekers in building strength, balance, and mindfulness. My work  has connected me with  schools, hotels, corporate organizations, and wellness centers, delivering programs that blend traditional practices with modern needs.
+                        But beyond techniques and titles, what truly defines me is my commitment to wellness as a way of life. 
+                        To me, fitness isn’t just about how much you can lift or how long you can hold a plank (though that has its place!). 
+                        I often share the idea that fitness is about:
                     </p>
+
+                    <ul class="fitness-list">
+                    <li><i class="fas fa-dumbbell"></i> Being able to carry yourself (your body weight) confidently.</li>
+                    <li><i class="fas fa-running"></i> Having the stamina to run for your life (literally!) without running out of breath — that’s good cardio.</li>
+                    <li><i class="fas fa-child"></i> Doing your daily chores without muscle restraints, stiff joints, or cracks — that’s mobility and flexibility.</li>
+                    <li><i class="fas fa-hand-rock"></i> Building arm strength and foot balance so that you’re not reaching for a walking stick at 60.</li>
+                    </ul>
+
+                    <p> This isn’t just an idea — it’s the foundation of your fitness journey. And yes, I can guide you there. Whether you’re already walking the path, just taking your first steps, or still standing at the edge and thinking about it, I create <strong>personalized structures</strong> designed around <em>your unique health and fitness needs</em>. Your journey matters, and I make sure it’s built for <strong>you</strong>. </p>
+                    <p>Currently, I’m building ITAS (Intensive Training and Seminars), a platform that brings together martial arts, holistic health, leadership, and capacity building into transformative experiences. ITAS is my vision for empowering individuals and communities through skill, discipline, and cultural wellness.</p>
+                    <p>Outside the dojo and studio, I’m also a creative. My background and hobbies in writing (especially poetry), graphic design, UI/UX, mobile photography, and content creation allow me to present ideas in fresh and engaging ways, bridging traditional practices with modern storytelling.</p>
+                    <p>Ultimately, my mission is simple: to serve as a Global Cultural Wellness Diplomat, using martial arts, yoga, and holistic healing to bridge cultures, empower communities, and inspire healthier ways of living.</p>
+                    <h3 class="font-display">Core Values</h3>
                     <p>
-                        My journey began with traditional martial arts and has evolved to encompass a comprehensive 
-                        understanding of how physical practice, mental training, and spiritual development work 
-                        together to create lasting transformation.
+                        <span>Empowering Minds, Enriching Bodies, Elevating Lives</span>
+                        <br><span>Discipline & Growth – Always evolving through learning and teaching.</span>
+                        <span>Holistic Health – Approaching wellness in body, mind, and spirit.</span>
+                        <span>Culture & Connection – Honoring traditions while engaging the modern world.</span>
                     </p>
-                   <!-- <div class="about-more-overlay">
-                        <a href="about.html" class="about-more-btn">
-                            <span>More About Me</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>-->
+                    <h3 class="font-display">Mission</h3>
+                    <p> To serve as a Global Cultural Wellness Diplomat, using martial arts, yoga, and holistic healing to bridge cultures, empower communities, and inspire healthier ways of living.</p>
                 </div>
-                
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">7+</span>
-                        <span class="stat-label">Disciplines</span>
-                    </div>
+
+                <!-- Toggle Button -->
+                 <div class="about-more-overlay">
+                <button id="about-toggle" class="about-more-btn">
+                    <span>Read More</span>
+                    <i class="fas fa-arrow-down"></i>
+                </button>
                 </div>
             </div>
             
-            <div class="about-image">
-                <img src="images/about-img.webp" loading="lazy" alt="SIR.RICHQRD Training" width="300" height="300">
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">7+</span>
+                    <span class="stat-label">Disciplines</span>
+                </div>
             </div>
         </div>
-    </section>
+        
+        <div class="about-image">
+            <img 
+                src="https://storage.googleapis.com/sir-richqrd/images/about-img.webp" 
+                srcset="image-resizer/output/about-img-600.webp 600w, image-resizer/output/about-img-1200.webp 1200w, image-resizer/output/about-img-2000.webp 2000w"
+                loading="lazy" alt="SIR.RICHQRD Training" width="300" height="300">
+        </div>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer id="contact" class="footer">
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/sir.richqrd-logo.webp" loading="lazy" class="footer-logo" alt="SIR.RICHQRD'S LOGO" width="50" height="50">&nbsp;<h3>SIR.RICHQRD</h3>
+                    <img 
+                        src="https://storage.googleapis.com/sir-richqrd/images/sir.richqrd-logo.webp" 
+                        srcset="image-resizer/output/sir.richqrd-logo-600.webp 600w, image-resizer/output/sir.richqrd-logo-1200.webp 1200w"
+                        loading="lazy" class="footer-logo" alt="SIR.RICHQRD" width="50" height="50">&nbsp;<h3 style="font-family:'Inertia Regular';font-weight:normal;font-size: 35px">SIR.RICHQRD</h3>
                     <p>
                         Empowering Minds, Enriching Bodies, Elevating Lives
                     </p>
@@ -1085,6 +1292,8 @@
                         </li>
                         <li><a href="tel:07071180535"><i class="fas fa-phone"></i> 0707 118 0535</a></li>
                         <li><a href="https://www.google.com/maps/place/Abuja,+Nigeria/" target="_blank"><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</a></li>
+                        <li><a href="https://storage.googleapis.com/sir-richqrd/richqrd-contact.vcf" download="sir.richqrd's-contact.vcf" target="_blank"><i class="fas fa-address-card"></i>  Save Contact</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -1107,6 +1316,68 @@
         });
         lightbox.init();
     </script>
+
+<script>
+(function () {
+  const root = document.getElementById('heroCarousel');
+  const track = root.querySelector('.carousel-track');
+  const slides = Array.from(root.querySelectorAll('.slide'));
+  const dots = Array.from(root.querySelectorAll('.dot'));
+  const prev = root.querySelector('.nav.prev');
+  const next = root.querySelector('.nav.next');
+
+  let index = 0, timer;
+
+  function go(i) {
+    index = (i + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, n) => d.classList.toggle('active', n === index));
+  }
+
+  function autoStart() {
+    timer = setInterval(() => go(index + 1), 5000);
+  }
+  function autoStop() { clearInterval(timer); }
+
+  // Controls
+  next.addEventListener('click', () => { autoStop(); go(index + 1); autoStart(); });
+  prev.addEventListener('click', () => { autoStop(); go(index - 1); autoStart(); });
+  dots.forEach((d, n) => d.addEventListener('click', () => { autoStop(); go(n); autoStart(); }));
+
+  // Pause on hover / keyboard nav
+  root.querySelector('.carousel-viewport').addEventListener('mouseenter', autoStop);
+  root.querySelector('.carousel-viewport').addEventListener('mouseleave', autoStart);
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { autoStop(); go(index + 1); autoStart(); }
+    if (e.key === 'ArrowLeft')  { autoStop(); go(index - 1); autoStart(); }
+  });
+  root.setAttribute('tabindex','0');
+
+  // Init
+  go(0);
+  autoStart();
+})();
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("about-toggle");
+    const moreContent = document.querySelector(".about-more-content");
+    let expanded = false;
+
+    toggleBtn.addEventListener("click", () => {
+        expanded = !expanded;
+        if (expanded) {
+            moreContent.style.display = "block";
+            toggleBtn.innerHTML = 'Show Less <i class="fas fa-arrow-up"></i>';
+        } else {
+            moreContent.style.display = "none";
+            toggleBtn.innerHTML = 'Read More <i class="fas fa-arrow-down"></i>';
+        }
+    });
+});
+</script>
+
 
 </body>
 </html>
