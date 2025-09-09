@@ -404,3 +404,104 @@
         day: 'numeric' 
       });
     }
+
+// About me read more
+    document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("about-toggle");
+    const moreContent = document.querySelector(".about-more-content");
+    let expanded = false;
+
+    toggleBtn.addEventListener("click", () => {
+        expanded = !expanded;
+        if (expanded) {
+            moreContent.style.display = "block";
+            toggleBtn.innerHTML = 'Show Less <i class="fas fa-arrow-up"></i>';
+        } else {
+            moreContent.style.display = "none";
+            toggleBtn.innerHTML = 'Read More <i class="fas fa-arrow-down"></i>';
+        }
+    });
+});
+
+// Floating Action Button
+document.addEventListener('DOMContentLoaded', function() {
+    const floatingNav = document.getElementById('floatingNav');
+    const floatingNavButton = document.getElementById('floatingNavButton');
+    const floatingNavMenu = document.getElementById('floatingNavMenu');
+
+    // Show/Hide button based on scroll
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateFloatingNav() {
+        // Show the button after scrolling down a bit (e.g., 100px)
+        if (window.scrollY > 100) {
+            floatingNav.classList.add('floating-nav--visible');
+        } else {
+            // Hide the button and close the menu if scrolling back to top
+            floatingNav.classList.remove('floating-nav--visible');
+            closeMenu(); // Ensure menu closes when button hides
+        }
+        lastScrollY = window.scrollY;
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateFloatingNav);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+
+    // Toggle menu open/close
+    function toggleMenu() {
+        const isOpen = floatingNavButton.classList.contains('floating-nav__button--open');
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    }
+
+    function openMenu() {
+        floatingNavButton.classList.add('floating-nav__button--open');
+        floatingNavButton.setAttribute('aria-expanded', 'true');
+        floatingNavMenu.classList.add('floating-nav__menu--open');
+        floatingNavMenu.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeMenu() {
+        floatingNavButton.classList.remove('floating-nav__button--open');
+        floatingNavButton.setAttribute('aria-expanded', 'false');
+        floatingNavMenu.classList.remove('floating-nav__menu--open');
+        floatingNavMenu.setAttribute('aria-hidden', 'true');
+    }
+
+    // Close menu if clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!floatingNav.contains(event.target)) {
+            closeMenu();
+        }
+    });
+
+    // Close menu if Escape key is pressed
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    });
+
+    // Attach event listener to the button
+    floatingNavButton.addEventListener('click', toggleMenu);
+
+    // Optional: Close menu after clicking a link (for better UX on mobile)
+    document.querySelectorAll('.floating-nav__link').forEach(link => {
+         link.addEventListener('click', () => {
+             // Add a small delay to see the click effect before closing
+             setTimeout(closeMenu, 150);
+         });
+    });
+
+});

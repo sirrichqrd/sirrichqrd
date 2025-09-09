@@ -33,7 +33,7 @@
   <link rel="preload" href="https://storage.googleapis.com/sir-richqrd/images/sir.richqrd-logo.webp" as="image">
 
   <!-- Load Inertia font -->
-  <link href="https://fonts.cdnfonts.com/css/inertia" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/inertia" rel="preconnect">
 
   <!-- Preload hero/brand images -->
   <link rel="preload" href="https://storage.googleapis.com/sir-richqrd/images/sir.richqrd-logo.webp" as="image">
@@ -54,7 +54,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
   <!-- PhotoSwipe CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css" media="print" onload="this.media='all'">
 
 
   <!-- Local Stylesheet (async load) -->
@@ -72,20 +72,20 @@
   <!-- Inline critical CSS -->
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-        --primary-100: #FDEAEA; --primary-200: #F9C5C5; --primary-300: #F49F9F; --primary-400: #EF7979; 
+
+    :root {
+        --primary-100: #FDEAEA; --primary-200: #F9C5C5; --primary-300: #F49F9F; --primary-400: #EF7979;
         --primary-500: #EB5454; --primary-600: #E52F2F; --primary-700: #910000; --primary-800: #8B0000; --primary-900: #660000;
         --neutral-50: #FAFAFA; --neutral-100: #F5F5F5; --neutral-200: #E5E5E5; --neutral-300: #D4D4D4;
         --neutral-400: #A3A3A3; --neutral-500: #737373; --neutral-600: #525252; --neutral-700: #404040; --neutral-800: #262626; --neutral-900: #171717;
         --accent-orange: #FF5722; --accent-amber: #FFA000; --accent-deep-red: #8B0000; --accent-maroon: #800000;
-        --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05); 
-        --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1); 
-        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1); 
-        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1); 
+        --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);
         --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
         --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
-        }
-
+    }
 
     body {
         font-family: 'Inter', sans-serif;
@@ -309,7 +309,7 @@
         background: var(--neutral-100);
         transform: translateY(-2px);
         box-shadow: var(--shadow-xl);
-        color: var(--primary-700);
+        color: #910000;
     }
 
     .btn-secondary {
@@ -336,9 +336,83 @@
         color: white;
     }
 
+    /* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-800), var(--primary-900));
+    z-index: 999;
+    padding: 24px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-nav-menu {
+    list-style: none;
+}
+
+.mobile-nav-item {
+    margin-bottom: 16px;
+}
+.mobile-nav-item:hover {
+    width: 100%;
+    border-radius: 8px;
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    padding: 12px 0;
+}
+
+.mobile-nav-link:hover {
+    color: var(--primary-300);
+}
+
+
+
+  .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding-right: 10px;
+    }
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+.nav-menu {
+    display: none;
+}
+
+.profile-section img {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 25px;
+}
+
+.mobile-toggle {
+    display: block;
+}
+}
   </style>
 </head>
-<body>
+<body id="home">
     <div class="nav-container">
     
     <!-- Navigation -->
@@ -420,10 +494,9 @@
     <div class="carousel-track">
 
       <!-- Yoga -->
-      <article class="slide" style="--tint: 244 114 182">
+      <article class="slide" style="--tint: 244 114 182" role="tabpanel" id="slide-yoga">
         <img 
-          loading="lazy"
-          src="image-resizer/output/yoga-carousel-1200.webp"
+          src="image-resizer/output/yoga-carousel-600.webp"
           srcset="
             image-resizer/output/yoga-carousel-600.webp 600w,
             image-resizer/output/yoga-carousel-1200.webp 1200w,
@@ -435,10 +508,10 @@
       </article>
 
       <!-- Aikido -->
-      <article class="slide" style="--tint: 139 92 246">
+      <article class="slide" style="--tint: 139 92 246" role="tabpanel" id="slide-aikido">
         <img 
           loading="lazy"
-          src="image-resizer/output/aikido-carousel-1200.webp"
+          src="image-resizer/output/aikido-carousel-600.webp"
           srcset="
             image-resizer/output/aikido-carousel-600.webp 600w,
             image-resizer/output/aikido-carousel-1200.webp 1200w,
@@ -450,10 +523,10 @@
       </article>
 
       <!-- Selfdefence -->
-      <article class="slide" style="--tint: 245 158 11">
+      <article class="slide" style="--tint: 245 158 11" role="tabpanel" id="slide-selfdefence">
         <img 
           loading="lazy"
-          src="image-resizer/output/self-defence-carousel-1200.webp"
+          src="image-resizer/output/self-defence-carousel-600.webp"
           srcset="
             image-resizer/output/self-defence-carousel-600.webp 600w,
             image-resizer/output/self-defence-carousel-1200.webp 1200w,
@@ -465,10 +538,10 @@
       </article>
 
       <!-- Tai Chi & Qigong -->
-      <article class="slide" style="--tint: 34 211 238">
+      <article class="slide" style="--tint: 34 211 238" role="tabpanel" id="slide-taichi">
         <img 
           loading="lazy"
-          src="image-resizer/output/taichi-wave-hands-1200.webp"
+          src="image-resizer/output/taichi-wave-hands-600.webp"
           srcset="
             image-resizer/output/taichi-wave-hands-600.webp 600w,
             image-resizer/output/taichi-wave-hands-1200.webp 1200w,
@@ -489,17 +562,17 @@
   </div>
 
   <div class="dots" role="tablist" aria-label="Slide navigation">
-    <button class="dot" aria-label="Tai Chi & Qigong"></button>
-    <button class="dot" aria-label="Aikido"></button>
-    <button class="dot" aria-label="Yoga"></button>
-    <button class="dot" aria-label="Selfdefence"></button>
+    <button class="dot" aria-label="Tai Chi & Qigong" role="tab"></button>
+    <button class="dot" aria-label="Aikido" role="tab"></button>
+    <button class="dot" aria-label="Yoga" role="tab"></button>
+    <button class="dot" aria-label="Selfdefence" role="tab"></button>
   </div>
 </div>
 <!-- /CAROUSEL -->
 
 
     <!-- Hero Section -->
-<section id="home" class="hero hero--carousel">
+<section class="hero hero--carousel">
   <div class="hero-wrap">
     <div class="hero-head">
       <div class="hero-badge">
@@ -509,7 +582,7 @@
       <h1 class="font-display">Empowering Minds,<br>Enriching Bodies,<br>Elevating Lives</h1>
       <p class="hero-subtitle">Hi! I'm RICHQRD. Take a journey with me.</p>
       <div class="hero-cta">
-        <a href="#services" class="btn-primary">
+        <a href="#services" class="btn-group btn-primary">
           Explore Services <i class="fas fa-arrow-right"></i>
         </a>
         <a href="#about" class="btn-secondary">
@@ -673,7 +746,7 @@
 
                 <!-- Specialized Tab -->
                 <div class="tab-content" id="specialized">
-                    <div class="services-grid">
+                    <div class="-grid">
                         <div class="service-item" data-service="Day Retreat" data-price="₦80,000 - ₦150,000" data-message="Hi! I'd like to book a Day Retreat (₦80,000 - ₦150,000). Please provide more details about programs and dates.">
                             <div class="service-header">
                                 <h3 class="service-name">Day Retreat</h3>
@@ -940,9 +1013,9 @@
                                 <img 
                                     src="image-resizer/output/iTAS-banner-1200.webp" 
                                     srcset="
-                                        image-resizer/output/iTAS-banner-600.webp 600px,
-                                        image-resizer/output/iTAS-banner-1200.webp 1200px,
-                                        image-resizer/output/iTAS-banner-2000.webp 2000px
+                                        image-resizer/output/iTAS-banner-600.webp 600w,
+                                        image-resizer/output/iTAS-banner-1200.webp 1200w,
+                                        image-resizer/output/iTAS-banner-2000.webp 2000w
                                     "
                                     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     loading="lazy" alt="iTAS" width="300" height="200">
@@ -957,11 +1030,11 @@
 
                             <div class="program-card">
                                 <img 
-                                    src="image-resizer/output/black belt-1200.webp" 
+                                    src="image-resizer/output/black%20belt-1200.webp" 
                                     srcset="
-                                        image-resizer/output/black belt-600.webp 600px,
-                                        image-resizer/output/black belt-1200.webp 1200px,
-                                        image-resizer/output/black belt-2000.webp 2000px,
+                                        image-resizer/output/black%20belt-600.webp 600w,
+                                        image-resizer/output/black%20belt-1200.webp 1200w,
+                                        image-resizer/output/black%20belt-2000.webp 2000w,
                                     "
                                     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     loading="lazy" alt="3rd Degree Black Belt Grading" width="300" height="200">
@@ -994,9 +1067,9 @@
       <img 
         src="image-resizer/output/side-angle-1200.webp" 
         srcset="
-          image-resizer/output/side-angle-600.webp 600px,
-          image-resizer/output/side-angle-1200.webp 1200px,
-          image-resizer/output/side-angle-2000.webp 2000px
+          image-resizer/output/side-angle-600.webp 600w,
+          image-resizer/output/side-angle-1200.webp 1200w,
+          image-resizer/output/side-angle-2000.webp 2000w
         "
         sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
         loading="lazy" 
@@ -1010,9 +1083,9 @@
       <img 
         src="image-resizer/output/taichi-carousel-1200.webp" 
         srcset="
-          image-resizer/output/taichi-carousel-600.webp 600px,
-          image-resizer/output/taichi-carousel-1200.webp 1200px,
-          image-resizer/output/taichi-carousel-2000.webp 2000px
+          image-resizer/output/taichi-carousel-600.webp 600w,
+          image-resizer/output/taichi-carousel-1200.webp 1200w,
+          image-resizer/output/taichi-carousel-2000.webp 2000w
         "
         sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
         loading="lazy" 
@@ -1026,9 +1099,9 @@
       <img 
         src="image-resizer/output/SafeAwwas-111-self-defence-1200.webp" 
         srcset="
-          image-resizer/output/SafeAwwas-111-self-defence-600.webp 600px,
-          image-resizer/output/SafeAwwas-111-self-defence-1200.webp 1200px,
-          image-resizer/output/SafeAwwas-111-self-defence-2000.webp 2000px
+          image-resizer/output/SafeAwwas-111-self-defence-600.webp 600w,
+          image-resizer/output/SafeAwwas-111-self-defence-1200.webp 1200w,
+          image-resizer/output/SafeAwwas-111-self-defence-2000.webp 2000w
         "
         sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
         loading="lazy" 
@@ -1042,9 +1115,9 @@
       <img 
         src="image-resizer/output/wushu-1st-duan-single-me-1200.webp" 
         srcset="
-          image-resizer/output/wushu-1st-duan-single-me-600.webp 600px,
-          image-resizer/output/wushu-1st-duan-single-me-1200.webp 1200px,
-          image-resizer/output/wushu-1st-duan-single-me-2000.webp 2000px
+          image-resizer/output/wushu-1st-duan-single-me-600.webp 600w,
+          image-resizer/output/wushu-1st-duan-single-me-1200.webp 1200w,
+          image-resizer/output/wushu-1st-duan-single-me-2000.webp 2000w
         "
         sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
         loading="lazy" 
@@ -1058,9 +1131,9 @@
       <img 
         src="image-resizer/output/karate-group-gedan-barai-1200.webp" 
         srcset="
-          image-resizer/output/karate-group-gedan-barai-600.webp 600px,
-          image-resizer/output/karate-group-gedan-barai-1200.webp 1200px,
-          image-resizer/output/karate-group-gedan-barai-2000.webp 2000px
+          image-resizer/output/karate-group-gedan-barai-600.webp 600w,
+          image-resizer/output/karate-group-gedan-barai-1200.webp 1200w,
+          image-resizer/output/karate-group-gedan-barai-2000.webp 2000w
         "
         sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
         loading="lazy" 
@@ -1074,9 +1147,9 @@
       <img 
         src="image-resizer/output/stadiun%40gana-1200.webp" 
         srcset="
-          image-resizer/output/stadiun%40gana-600.webp 600px,
-          image-resizer/output/stadiun%40gana-1200.webp 1200px,
-          image-resizer/output/stadiun%40gana-2000.webp 2000px
+          image-resizer/output/stadiun%40gana-600.webp 600w,
+          image-resizer/output/stadiun%40gana-1200.webp 1200w,
+          image-resizer/output/stadiun%40gana-2000.webp 2000w
         "
         sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
         loading="lazy" 
@@ -1245,18 +1318,23 @@
                     <p>
                         Empowering Minds, Enriching Bodies, Elevating Lives
                     </p>
+                    <!-- Social Links -->
                     <div class="social-links">
-                        <a href="https://instagram.com/sir.richqrd" target="_blank" class="social-link" alt="Instagram">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://instagram.com/sir.richqrd" target="_blank" class="social-link" rel="noopener">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
                         </a>
-                        <a href="https://www.tiktok.com/@sir.richqrds?is_from_webapp=1&sender_device=pc" target="_blank" class="social-link" alt="TikTok">
-                            <i class="fab fa-tiktok"></i>
+                        <a href="https://www.tiktok.com/@sir.richqrds?is_from_webapp=1&sender_device=pc" target="_blank" class="social-link" rel="noopener">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                            <span class="sr-only">TikTok</span>
                         </a>
-                        <a href="https://web.facebook.com/richard.abraham.5036459/" target="_blank" class="social-link" alt="Facebook">
-                            <i class="fab fa-facebook"></i>
+                        <a href="https://web.facebook.com/richard.abraham.5036459/" target="_blank" class="social-link" rel="noopener">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/richqrd-abraham-09737b183?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYKQKGDWbQ12qBWGcqaVCeA%3D%3D" target="_blank" class="social-link" alt="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/richqrd-abraham-09737b183?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYKQKGDWbQ12qBWGcqaVCeA%3D%3D" target="_blank" class="social-link" rel="noopener">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span class="sr-only">LinkedIn</span>
                         </a>
                     </div>
                 </div>
@@ -1305,6 +1383,23 @@
         </div>
     </footer>
 
+    <!-- Floating Navigation Button -->
+<div id="floatingNav" class="floating-nav">
+    <button id="floatingNavButton" class="floating-nav__button" aria-label="Open quick navigation" aria-expanded="false">
+        <!-- Use your logo image -->
+        <img src="https://storage.googleapis.com/sir-richqrd/images/sir.richqrd-logo.webp" alt="SIR.RICHQRD Logo" class="floating-nav__logo">
+    </button>
+    <nav id="floatingNavMenu" class="floating-nav__menu" aria-hidden="true">
+        <ul class="floating-nav__list">
+            <li><a href="#home" class="floating-nav__link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#services" class="floating-nav__link"><i class="fas fa-concierge-bell"></i> Services</a></li>
+            <li><a href="#featured" class="floating-nav__link"><i class="fas fa-star"></i> Featured</a></li>
+            <li><a href="#about" class="floating-nav__link"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#contact" class="floating-nav__link"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
     <!-- PhotoSwipe JS -->
     <script type="module">
       import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
@@ -1328,10 +1423,41 @@
 
   let index = 0, timer;
 
+  // --- ARIA Setup (Add this block) ---
+  // Assign IDs to slides if not already present (they should be in HTML now)
+  // Link tabs (dots) to tabpanels (slides)
+  slides.forEach((slide, i) => {
+    // Ensure each slide has an ID (from HTML)
+    // if (!slide.id) { slide.id = `slide-${i}`; } // Fallback if missing in HTML
+    // Link the dot (tab) to this slide (tabpanel)
+    if (dots[i] && slide.id) { // Check if dot and slide ID exist
+      dots[i].setAttribute('aria-controls', slide.id); // Tab controls Tabpanel
+      // Also set aria-labelledby on the slide pointing back to the dot
+      // dots[i].id = `tab-${i}`; // Give the dot an ID if it doesn't have one
+      // slide.setAttribute('aria-labelledby', `tab-${i}`);
+      // Or, simpler, just ensure the slide knows which tab controls it
+    }
+  });
+
   function go(i) {
+    const prevIndex = index; // Store previous index if needed
     index = (i + slides.length) % slides.length;
     track.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach((d, n) => d.classList.toggle('active', n === index));
+
+    // --- Update ARIA attributes for dots (tabs) (Modify this part) ---
+    dots.forEach((dot, n) => {
+      const isActive = (n === index);
+      dot.classList.toggle('active', isActive);
+      // Add aria-selected attribute
+      dot.setAttribute('aria-selected', isActive);
+      // Manage focusability (optional but good for keyboard)
+      dot.setAttribute('tabindex', isActive ? '0' : '-1');
+      // Ensure role is set (should be in HTML, but double-check)
+      if (!dot.getAttribute('role')) {
+         dot.setAttribute('role', 'tab');
+      }
+    });
+    // --- End of modification ---
   }
 
   function autoStart() {
@@ -1353,31 +1479,100 @@
   });
   root.setAttribute('tabindex','0');
 
-  // Init
-  go(0);
+  // --- Init modifications (Add/modify this part) ---
+  // Set initial ARIA states for dots
+  if (dots.length > 0) {
+    // Set the first dot as focusable
+    dots[0].setAttribute('tabindex', '0');
+    // Set others as not focusable initially
+    for (let i = 1; i < dots.length; i++) {
+      dots[i].setAttribute('tabindex', '-1');
+      // Also set initial aria-selected state
+      dots[i].setAttribute('aria-selected', 'false');
+    }
+    // Set initial aria-selected state for the first dot
+    dots[0].setAttribute('aria-selected', 'true');
+     // Ensure role is set on all dots (should be in HTML)
+    dots.forEach(dot => {
+        if (!dot.getAttribute('role')) {
+            dot.setAttribute('role', 'tab');
+        }
+    });
+  }
+  // Ensure slides have initial aria-hidden state (optional, visual hiding usually sufficient)
+  // slides.forEach((slide, n) => {
+  //   slide.setAttribute('aria-hidden', n !== 0); // Only first slide not hidden initially
+  // });
+  go(0); // This will now also set the correct ARIA states for the first slide/dot
   autoStart();
+  // --- End of Init modifications ---
 })();
 </script>
 
+<!-- Intro.js CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css"/>
+<script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleBtn = document.getElementById("about-toggle");
-    const moreContent = document.querySelector(".about-more-content");
-    let expanded = false;
-
-    toggleBtn.addEventListener("click", () => {
-        expanded = !expanded;
-        if (expanded) {
-            moreContent.style.display = "block";
-            toggleBtn.innerHTML = 'Show Less <i class="fas fa-arrow-up"></i>';
-        } else {
-            moreContent.style.display = "none";
-            toggleBtn.innerHTML = 'Read More <i class="fas fa-arrow-down"></i>';
+  // Check if user has already seen the tour
+  if (!localStorage.getItem("siteTourDone")) {
+    // Use the newer introJs.tour() method
+    const tour = introJs.tour();
+    tour.setOptions({
+      steps: [
+        {
+          title: '<div class="introjs-mascot"><img src="favicon.svg" class="introjs-mascot" alt="Mascot"></div> Welcome',
+          intro: "Let me guide you through the key parts of this site."
+        },
+        {
+          element: document.querySelector('.nav-menu'),
+          title: '<div class="introjs-mascot"><img src="favicon.svg" class="introjs-mascot" alt="Mascot"></div> Navigation',
+          intro: "This is the <b>Navigation Bar</b>. Use it to explore different sections."
+        },
+        {
+          element: document.querySelector('#services'),
+          title: '<div class="introjs-mascot"><img src="favicon.svg" class="introjs-mascot" alt="Mascot"></div> Services',
+          intro: "I offer a range of custom services. Whether you need personalized attention, expert guidance, or simply want to connect with me, I’m here to help. <b>Send me</b> a WhatsApp or Email instantly with a prefilled message by clicking on any of your desired service items below."
+        },
+        {
+          element: document.querySelector('#featured'),
+          title: '<div class="introjs-mascot"><img src="favicon.svg" class="introjs-mascot" alt="Mascot"></div> Featured',
+          intro: "View highlights from where I have featured."
+        },
+        {
+          element: document.querySelector('#about'),
+          title: '<div class="introjs-mascot"><img src="favicon.svg" class="introjs-mascot" alt="Mascot"></div> About',
+          intro: "Me, what I do, and my journey so far."
+        },
+        {
+          title: '<div class="introjs-mascot"><img src="favicon.svg" class="introjs-mascot" alt="Mascot"></div> That’s it!',
+          intro: "You’re all set to explore on your own now."
         }
-    });
+      ],
+      showProgress: true,
+      showBullets: false,
+      nextLabel: 'Next →',
+      prevLabel: '← Back',
+      exitLabel: 'Exit',
+      doneLabel: 'Got it! ✔',
+      // --- Add Highlight Plugin Options for better styling ---
+      // These options help integrate with the custom styles
+      highlightClass: 'introjs-helperLayer', // Use your existing highlight class
+      tooltipClass: 'introjs-tooltip',       // Use your existing tooltip class
+      // Ensure buttons are targeted correctly for styling
+      buttonClass: 'introjs-button' 
+    }).oncomplete(function () {
+      // Mark tour as done
+      localStorage.setItem("siteTourDone", "true");
+    }).onexit(function () {
+      // Even if user exits, don’t show again
+      localStorage.setItem("siteTourDone", "true");
+    }).start();
+  }
 });
 </script>
-
+</script>
 
 </body>
 </html>
